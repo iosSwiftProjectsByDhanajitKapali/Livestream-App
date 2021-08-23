@@ -48,7 +48,7 @@ public func customBezierPath() -> UIBezierPath{
     return path
 }
 
-extension ViewController{
+extension LiveStreamVC{
     
     func generateHeartBubblesAnimation(onView: UIView){
         

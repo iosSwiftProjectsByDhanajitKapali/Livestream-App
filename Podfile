@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '14.0'
 
 target 'Livestream App' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -11,6 +11,7 @@ target 'Livestream App' do
   pod 'AgoraRtcEngine_iOS'
   pod 'IQKeyboardManagerSwift'
   pod 'AgoraRtm_iOS'
+  pod 'TransitionButton'
   
   # Pods for Livestream App
 

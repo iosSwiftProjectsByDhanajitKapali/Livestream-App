@@ -11,7 +11,7 @@ import UIKit
 import AgoraRtcKit
 import AgoraRtmKit
 
-class ViewController: BaseVC {
+class LiveStreamVC: BaseVC {
 
     //MARK: - All IBOutlets
     @IBOutlet var hostProfileImageView: UIImageView!
@@ -29,7 +29,7 @@ class ViewController: BaseVC {
     @IBOutlet var joinLiveStreamButton: UIBarButtonItem!
     @IBOutlet var leaveLiveStreamButton: UIBarButtonItem!
     
-    //MARK: - Variables Used in ViewController
+    //MARK: - Variables Used in LiveStreamVC
     private var presenter : Presenter!
     var tableViewData = [LiveCommentModel]()
     
@@ -91,7 +91,7 @@ class ViewController: BaseVC {
 }
 
 //MARK: - LifeCycle Methods
-extension ViewController{
+extension LiveStreamVC{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +114,7 @@ extension ViewController{
 
 
 //MARK: - Presenter delegate methods
-extension ViewController : PresenterDelegate{
+extension LiveStreamVC : PresenterDelegate{
     func didRecieveResponse(dataModel: MyModel) {
         //Process The Recived data
     }
@@ -125,7 +125,7 @@ extension ViewController : PresenterDelegate{
 }
 
 //MARK: - Private functions
-private extension ViewController{
+private extension LiveStreamVC{
     
     func initialSetup(){
         //Call methods defined in BaseVC to design navigation bar.
@@ -141,7 +141,7 @@ private extension ViewController{
         goToLatestCommentButton.isHidden = true
         
         //hide the leave button
-        self.leaveLiveStreamButton.isEnabled = false
+        //self.leaveLiveStreamButton.isEnabled = false
         
         addCommentTextField.delegate = self
         

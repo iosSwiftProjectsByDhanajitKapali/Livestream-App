@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012443F826D3C1F1001AED01 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012443F726D3C1F1001AED01 /* HomeVC.swift */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -27,12 +28,12 @@
 		01BEAF3326CE6A4400F0E968 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3226CE6A4400F0E968 /* UITextFieldExtension.swift */; };
 		01BEAF3726CE6C4300F0E968 /* LiveCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3526CE6C4300F0E968 /* LiveCommentsTableViewCell.swift */; };
 		01BEAF3826CE6C4300F0E968 /* LiveCommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BEAF3626CE6C4300F0E968 /* LiveCommentsTableViewCell.xib */; };
-		01BEAF3B26CF8DE100F0E968 /* ViewControllerExtensionForAgoraRTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3A26CF8DE100F0E968 /* ViewControllerExtensionForAgoraRTC.swift */; };
-		01BEAF3D26CF8EA500F0E968 /* ViewControllerExtensionForUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3C26CF8EA500F0E968 /* ViewControllerExtensionForUITableView.swift */; };
-		01BEAF3F26CF96DB00F0E968 /* ViewControllerExtensionForAgoraRTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3E26CF96DB00F0E968 /* ViewControllerExtensionForAgoraRTM.swift */; };
-		01BEAF4126CF976400F0E968 /* ConstantsForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF4026CF976400F0E968 /* ConstantsForViewController.swift */; };
+		01BEAF3B26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3A26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift */; };
+		01BEAF3D26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3C26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift */; };
+		01BEAF3F26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF3E26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift */; };
+		01BEAF4126CF976400F0E968 /* ConstantsForLiveStreamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF4026CF976400F0E968 /* ConstantsForLiveStreamVC.swift */; };
 		01BEAF4326CFB0ED00F0E968 /* HeartBubblesAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF4226CFB0ED00F0E968 /* HeartBubblesAnimation.swift */; };
-		01BEAF4526D0DC4B00F0E968 /* ViewControllerExtensionForUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF4426D0DC4B00F0E968 /* ViewControllerExtensionForUITextField.swift */; };
+		01BEAF4526D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEAF4426D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift */; };
 		01E0FA2D26B15FB900993AC7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0FA2C26B15FB800993AC7 /* NetworkManager.swift */; };
 		01E0FA5126B1671400993AC7 /* ConstantsForNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0FA5026B1671400993AC7 /* ConstantsForNetworking.swift */; };
 		01E0FA5F26B16C0E00993AC7 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0FA5E26B16C0E00993AC7 /* Presenter.swift */; };
@@ -47,7 +48,7 @@
 		01E0FACE26B18CF100993AC7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0FACD26B18CF100993AC7 /* UIViewControllerExtension.swift */; };
 		1B36156224E6549B0046DD8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36156124E6549B0046DD8E /* AppDelegate.swift */; };
 		1B36156424E6549B0046DD8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36156324E6549B0046DD8E /* SceneDelegate.swift */; };
-		1B36156624E6549B0046DD8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36156524E6549B0046DD8E /* ViewController.swift */; };
+		1B36156624E6549B0046DD8E /* LiveStreamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36156524E6549B0046DD8E /* LiveStreamVC.swift */; };
 		1B36156924E6549B0046DD8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B36156724E6549B0046DD8E /* Main.storyboard */; };
 		1B36156B24E6549E0046DD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B36156A24E6549E0046DD8E /* Assets.xcassets */; };
 		1B36156E24E6549E0046DD8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B36156C24E6549E0046DD8E /* LaunchScreen.storyboard */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012443F726D3C1F1001AED01 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -101,12 +103,12 @@
 		01BEAF3226CE6A4400F0E968 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		01BEAF3526CE6C4300F0E968 /* LiveCommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCommentsTableViewCell.swift; sourceTree = "<group>"; };
 		01BEAF3626CE6C4300F0E968 /* LiveCommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCommentsTableViewCell.xib; sourceTree = "<group>"; };
-		01BEAF3A26CF8DE100F0E968 /* ViewControllerExtensionForAgoraRTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensionForAgoraRTC.swift; sourceTree = "<group>"; };
-		01BEAF3C26CF8EA500F0E968 /* ViewControllerExtensionForUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensionForUITableView.swift; sourceTree = "<group>"; };
-		01BEAF3E26CF96DB00F0E968 /* ViewControllerExtensionForAgoraRTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensionForAgoraRTM.swift; sourceTree = "<group>"; };
-		01BEAF4026CF976400F0E968 /* ConstantsForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsForViewController.swift; sourceTree = "<group>"; };
+		01BEAF3A26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVCExtensionForAgoraRTC.swift; sourceTree = "<group>"; };
+		01BEAF3C26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVCExtensionForUITableView.swift; sourceTree = "<group>"; };
+		01BEAF3E26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVCExtensionForAgoraRTM.swift; sourceTree = "<group>"; };
+		01BEAF4026CF976400F0E968 /* ConstantsForLiveStreamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsForLiveStreamVC.swift; sourceTree = "<group>"; };
 		01BEAF4226CFB0ED00F0E968 /* HeartBubblesAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBubblesAnimation.swift; sourceTree = "<group>"; };
-		01BEAF4426D0DC4B00F0E968 /* ViewControllerExtensionForUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensionForUITextField.swift; sourceTree = "<group>"; };
+		01BEAF4426D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVCExtensionForUITextField.swift; sourceTree = "<group>"; };
 		01E0FA2C26B15FB800993AC7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		01E0FA5026B1671400993AC7 /* ConstantsForNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsForNetworking.swift; sourceTree = "<group>"; };
 		01E0FA5E26B16C0E00993AC7 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 		1B36155E24E6549B0046DD8E /* AppName-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppName-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B36156124E6549B0046DD8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B36156324E6549B0046DD8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B36156524E6549B0046DD8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B36156524E6549B0046DD8E /* LiveStreamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVC.swift; sourceTree = "<group>"; };
 		1B36156824E6549B0046DD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B36156A24E6549E0046DD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B36156D24E6549E0046DD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012443F626D3C1BF001AED01 /* Home Entity */ = {
+			isa = PBXGroup;
+			children = (
+				012443F726D3C1F1001AED01 /* HomeVC.swift */,
+			);
+			path = "Home Entity";
+			sourceTree = "<group>";
+		};
 		017D814E26B2E9B2003D410B /* UserDefaults Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,13 +225,13 @@
 			isa = PBXGroup;
 			children = (
 				01BEAF3426CE6BF500F0E968 /* CustomCells */,
-				1B36156524E6549B0046DD8E /* ViewController.swift */,
-				01BEAF3A26CF8DE100F0E968 /* ViewControllerExtensionForAgoraRTC.swift */,
-				01BEAF3C26CF8EA500F0E968 /* ViewControllerExtensionForUITableView.swift */,
-				01BEAF3E26CF96DB00F0E968 /* ViewControllerExtensionForAgoraRTM.swift */,
-				01BEAF4026CF976400F0E968 /* ConstantsForViewController.swift */,
+				1B36156524E6549B0046DD8E /* LiveStreamVC.swift */,
+				01BEAF3A26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift */,
+				01BEAF3C26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift */,
+				01BEAF3E26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift */,
+				01BEAF4026CF976400F0E968 /* ConstantsForLiveStreamVC.swift */,
 				01BEAF4226CFB0ED00F0E968 /* HeartBubblesAnimation.swift */,
-				01BEAF4426D0DC4B00F0E968 /* ViewControllerExtensionForUITextField.swift */,
+				01BEAF4426D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,14 +252,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		017D823726BA9858003D410B /* Home Entity */ = {
+		017D823726BA9858003D410B /* LiveStream Entity */ = {
 			isa = PBXGroup;
 			children = (
 				017D822E26BA9824003D410B /* View */,
 				017D822F26BA982F003D410B /* Presenter */,
 				017D823326BA984A003D410B /* Model */,
 			);
-			path = "Home Entity";
+			path = "LiveStream Entity";
 			sourceTree = "<group>";
 		};
 		017D823B26BA987E003D410B /* Entities */ = {
@@ -258,7 +268,8 @@
 				017D824026BA9A43003D410B /* SignUp Entity */,
 				017D823F26BA9A3A003D410B /* Login Entity */,
 				1B3615BF24E670D70046DD8E /* Base Entity */,
-				017D823726BA9858003D410B /* Home Entity */,
+				012443F626D3C1BF001AED01 /* Home Entity */,
+				017D823726BA9858003D410B /* LiveStream Entity */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -751,7 +762,7 @@
 				017D821126BA55D4003D410B /* LoaderUtility.swift in Sources */,
 				017D818726B404F1003D410B /* BaseVC.swift in Sources */,
 				1B36159B24E6557E0046DD8E /* UIViewExtension.swift in Sources */,
-				1B36156624E6549B0046DD8E /* ViewController.swift in Sources */,
+				1B36156624E6549B0046DD8E /* LiveStreamVC.swift in Sources */,
 				017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */,
 				01E0FA7626B173ED00993AC7 /* NetworkingError.swift in Sources */,
 				01E0FAA126B17F6C00993AC7 /* UserDefaultsHelperProtocol.swift in Sources */,
@@ -762,22 +773,23 @@
 				017D817126B3B1E6003D410B /* AppDirectories.swift in Sources */,
 				1B36159924E6556C0046DD8E /* UIButtonExtension.swift in Sources */,
 				1B36156224E6549B0046DD8E /* AppDelegate.swift in Sources */,
-				01BEAF3F26CF96DB00F0E968 /* ViewControllerExtensionForAgoraRTM.swift in Sources */,
+				01BEAF3F26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift in Sources */,
 				017D824F26BA9C4B003D410B /* SignUpVC_Presenter.swift in Sources */,
 				01BEAF3726CE6C4300F0E968 /* LiveCommentsTableViewCell.swift in Sources */,
 				01E0FAB626B185A700993AC7 /* DataBaseManager.swift in Sources */,
 				01BEAF4326CFB0ED00F0E968 /* HeartBubblesAnimation.swift in Sources */,
 				01E0FACE26B18CF100993AC7 /* UIViewControllerExtension.swift in Sources */,
-				01BEAF3B26CF8DE100F0E968 /* ViewControllerExtensionForAgoraRTC.swift in Sources */,
+				01BEAF3B26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift in Sources */,
 				1B36156424E6549B0046DD8E /* SceneDelegate.swift in Sources */,
+				012443F826D3C1F1001AED01 /* HomeVC.swift in Sources */,
 				01E0FA5F26B16C0E00993AC7 /* Presenter.swift in Sources */,
-				01BEAF4526D0DC4B00F0E968 /* ViewControllerExtensionForUITextField.swift in Sources */,
+				01BEAF4526D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift in Sources */,
 				017D817F26B3DF2D003D410B /* AppFileManipulationProtocol.swift in Sources */,
 				01E0FAA926B17FCD00993AC7 /* UserDefaultsHelper.swift in Sources */,
 				017D821F26BA7C8B003D410B /* ConstantsForFileManagerHelper.swift in Sources */,
 				017D824A26BA9A82003D410B /* SignUpVC.swift in Sources */,
 				01E0FA7B26B1746D00993AC7 /* Constants.swift in Sources */,
-				01BEAF4126CF976400F0E968 /* ConstantsForViewController.swift in Sources */,
+				01BEAF4126CF976400F0E968 /* ConstantsForLiveStreamVC.swift in Sources */,
 				01BEAF3326CE6A4400F0E968 /* UITextFieldExtension.swift in Sources */,
 				017D825426BA9C62003D410B /* LoginVC_Presenter.swift in Sources */,
 				1B3615BC24E66FF50046DD8E /* AppUtilities.swift in Sources */,
@@ -785,7 +797,7 @@
 				01E0FA9826B1777A00993AC7 /* HttpResponseCodeChecker.swift in Sources */,
 				017D815A26B3B0B0003D410B /* AppFileManipulation.swift in Sources */,
 				017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */,
-				01BEAF3D26CF8EA500F0E968 /* ViewControllerExtensionForUITableView.swift in Sources */,
+				01BEAF3D26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

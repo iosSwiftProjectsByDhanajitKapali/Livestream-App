@@ -10,8 +10,8 @@ import Foundation
 
 struct Constant{
     
-    struct StoryBoardID{
-        static let HOME_SCREEN_ID = "homeSceneID"
+    struct StoryBoardSceneID{
+        static let LIVE_STREAM_SCREEN_ID = "livestreamSceneID"
         static let LOGIN_SCREEN_ID = "loginSceneID"
         static let SIGNUP_SCREEN_ID = "signupSceneID"
     }

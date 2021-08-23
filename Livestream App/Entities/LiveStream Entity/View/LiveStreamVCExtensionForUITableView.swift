@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController{
+extension LiveStreamVC{
     func addNewLiveCommentInTableView(comment : LiveCommentModel){
         self.tableViewData.insert(comment, at: 0)
         self.liveCommentsTableView.reloadData()
@@ -16,7 +16,7 @@ extension ViewController{
 }
 
 //MARK: - TableView DataSource methods
-extension ViewController : UITableViewDataSource{
+extension LiveStreamVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewData.count
     }

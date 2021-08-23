@@ -10,7 +10,7 @@ import Foundation
 import AgoraRtmKit
 
 
-extension ViewController{
+extension LiveStreamVC{
     
     ///Add new Message to the LiveComments TableView
     func appendMessage(user: String, content: String) {
@@ -23,7 +23,7 @@ extension ViewController{
 }
 
 //MARK: - Agora RTM service Manager
-extension ViewController{
+extension LiveStreamVC{
     
     ///Login to the RTM system
     func loginToAgoraRTMServer(withUserID : String){
@@ -110,7 +110,7 @@ extension ViewController{
 }
 
 //MARK: - AgoraRtmDelegate functions
-extension ViewController: AgoraRtmDelegate{
+extension LiveStreamVC: AgoraRtmDelegate{
     func rtmKit(_ kit: AgoraRtmKit, connectionStateChanged state: AgoraRtmConnectionState, reason: AgoraRtmConnectionChangeReason) {
         print("connection state changed")
     }
@@ -121,7 +121,7 @@ extension ViewController: AgoraRtmDelegate{
 }
 
 //MARK: - AgoraRtmChannelDelegate functions
-extension ViewController : AgoraRtmChannelDelegate{
+extension LiveStreamVC : AgoraRtmChannelDelegate{
     func channel(_ channel: AgoraRtmChannel, messageReceived message: AgoraRtmMessage, from member: AgoraRtmMember) {
         appendMessage(user: member.userId, content: message.text)
     }

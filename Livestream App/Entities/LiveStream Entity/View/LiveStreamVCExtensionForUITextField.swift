@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController : UITextFieldDelegate {
+extension LiveStreamVC : UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""

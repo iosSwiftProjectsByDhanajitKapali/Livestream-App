@@ -10,7 +10,7 @@ import Foundation
 import AgoraRtcKit
 
 //MARK: - Agora Live Streaming
-extension ViewController{
+extension LiveStreamVC{
     
     func initView() {
             // Initializes the remote video view. This view displays video when a remote host joins the channel
@@ -67,7 +67,7 @@ extension ViewController{
     }
 }
 
-extension ViewController : AgoraRtcEngineDelegate{
+extension LiveStreamVC : AgoraRtcEngineDelegate{
     // Monitors the didJoinedOfUid callback
     // The SDK triggers the callback when a remote host joins the channel
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {

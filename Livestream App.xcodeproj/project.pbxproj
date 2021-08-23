@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		012443F826D3C1F1001AED01 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012443F726D3C1F1001AED01 /* HomeVC.swift */; };
+		012443FC26D3CDD0001AED01 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012443FB26D3CDD0001AED01 /* CustomAlert.swift */; };
+		012443FE26D3CDEF001AED01 /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012443FD26D3CDEF001AED01 /* CustomAlert.xib */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -83,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		012443F726D3C1F1001AED01 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		012443FB26D3CDD0001AED01 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		012443FD26D3CDEF001AED01 /* CustomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -197,6 +201,24 @@
 			path = "Home Entity";
 			sourceTree = "<group>";
 		};
+		012443F926D3CD74001AED01 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				01BEAF3426CE6BF500F0E968 /* CustomCells */,
+				012443FA26D3CD82001AED01 /* CustomAlert */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		012443FA26D3CD82001AED01 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				012443FB26D3CDD0001AED01 /* CustomAlert.swift */,
+				012443FD26D3CDEF001AED01 /* CustomAlert.xib */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		017D814E26B2E9B2003D410B /* UserDefaults Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +246,7 @@
 		017D822E26BA9824003D410B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01BEAF3426CE6BF500F0E968 /* CustomCells */,
+				012443F926D3CD74001AED01 /* CustomViews */,
 				1B36156524E6549B0046DD8E /* LiveStreamVC.swift */,
 				01BEAF3A26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift */,
 				01BEAF3C26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift */,
@@ -625,6 +647,7 @@
 				1B36156B24E6549E0046DD8E /* Assets.xcassets in Resources */,
 				1B36156924E6549B0046DD8E /* Main.storyboard in Resources */,
 				01BEAF3826CE6C4300F0E968 /* LiveCommentsTableViewCell.xib in Resources */,
+				012443FE26D3CDEF001AED01 /* CustomAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +786,7 @@
 				017D818726B404F1003D410B /* BaseVC.swift in Sources */,
 				1B36159B24E6557E0046DD8E /* UIViewExtension.swift in Sources */,
 				1B36156624E6549B0046DD8E /* LiveStreamVC.swift in Sources */,
+				012443FC26D3CDD0001AED01 /* CustomAlert.swift in Sources */,
 				017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */,
 				01E0FA7626B173ED00993AC7 /* NetworkingError.swift in Sources */,
 				01E0FAA126B17F6C00993AC7 /* UserDefaultsHelperProtocol.swift in Sources */,

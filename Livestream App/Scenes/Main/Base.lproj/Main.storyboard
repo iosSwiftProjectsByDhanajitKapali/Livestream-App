@@ -137,6 +137,9 @@
                                             <constraint firstAttribute="height" constant="45" id="jh9-Me-Xk2"/>
                                         </constraints>
                                         <state key="normal" image="close-96"/>
+                                        <connections>
+                                            <action selector="leaveLivestreamButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hH5-wm-rKz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.63921568630000003" blue="0.1960784314" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
@@ -215,12 +218,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ug4-x4-mSS" secondAttribute="trailing" constant="10" id="uwT-4m-Wjq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TZe-gd-5Fm">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Join  " id="003-QO-WbS"/>
-                            <barButtonItem title="Leave  " id="XNT-oV-IFX"/>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="TZe-gd-5Fm"/>
                     <connections>
                         <outlet property="activePeopleInLivestreamTextLabel" destination="W3L-Qv-eaf" id="bfV-ca-7pK"/>
                         <outlet property="addCommentTextField" destination="CYv-gW-z4I" id="gO9-tN-Wlt"/>
@@ -229,6 +227,7 @@
                         <outlet property="hostProfileImageView" destination="l3I-Kx-3yC" id="NNO-57-aNP"/>
                         <outlet property="hostUserNameTextLabel" destination="f3O-BE-SJx" id="tLA-Wy-lNp"/>
                         <outlet property="isHostLiveTextLabel" destination="okM-Ft-KxU" id="4fW-Fz-Pce"/>
+                        <outlet property="leaveLivestreamButton" destination="tv8-AZ-kPm" id="ahB-oH-J3h"/>
                         <outlet property="liveCommentsTableView" destination="Wmh-lV-cly" id="aam-g0-LWJ"/>
                         <outlet property="livestreamUptimeTextLabel" destination="v16-Pk-whk" id="huA-bK-Inq"/>
                         <outlet property="remoteView" destination="Ug4-x4-mSS" id="wB1-gx-IdA"/>
@@ -237,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643" y="80"/>
+            <point key="canvasLocation" x="2630" y="80"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="pBC-Jm-wIS">
@@ -290,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g22-T6-Yca" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3705.7971014492755" y="-334.15178571428572"/>
+            <point key="canvasLocation" x="3690" y="-334"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="2Rv-zD-RAD">
@@ -306,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNN-Y3-jSo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3721.739130434783" y="387.72321428571428"/>
+            <point key="canvasLocation" x="3690" y="396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="luh-1f-1vE">

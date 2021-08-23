@@ -26,8 +26,8 @@ class LiveStreamVC: BaseVC {
     @IBOutlet var heartBubbleBackgroundView: UIView!
     @IBOutlet var goToLatestCommentButton: UIButton!
     @IBOutlet var remoteView: UIView!
-    @IBOutlet var joinLiveStreamButton: UIBarButtonItem!
-    @IBOutlet var leaveLiveStreamButton: UIBarButtonItem!
+    @IBOutlet var leaveLivestreamButton: UIButton!
+    
     
     //MARK: - Variables Used in LiveStreamVC
     private var presenter : Presenter!
@@ -47,24 +47,10 @@ class LiveStreamVC: BaseVC {
 
     
     //MARK: - ALL IBActions
-    @IBAction func joinButtonPressed(_ sender: UIBarButtonItem) {
-        print("Join Button Pressed")
-        joinAgoraRtcChannel()
-        
-        //login and join the Agora RTM
-        loginToAgoraRTMServer(withUserID: "userA")
-        
-        joinLiveStreamButton.isEnabled = false
-        leaveLiveStreamButton.isEnabled = true
-    }
-    
-    @IBAction func leaveButtonPressed(_ sender: UIBarButtonItem) {
-        print("Leave Button Presses")
-        leaveAgoraRtcChannel()
-        leaveAoraRtmChannel()
-        
-        joinLiveStreamButton.isEnabled = true
-        leaveLiveStreamButton.isEnabled = false
+    @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
+        print("leave button pressed")
+        stopliveStream()
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
@@ -75,13 +61,8 @@ class LiveStreamVC: BaseVC {
     }
     
     @IBAction func heartButtonPressed(_ sender: UIButton) {
-        print("heart button pressed")
         
-        let frame = CGRect(x: 240, y: 500, width: 160, height: 280)
-        let curvedView = CurvedView(frame: frame)
-        curvedView.backgroundColor = .clear
-        heartBubbleBackgroundView.addSubview(curvedView)
-        
+        //Start the Animation
         (0...4).forEach { _ in
             generateHeartBubblesAnimation(onView: heartBubbleBackgroundView)
         }
@@ -100,15 +81,19 @@ extension LiveStreamVC{
         //Setup the Presenter
         presenter = Presenter(withDelegate: self)
         
+        //start the liveStream
+        startLiveStream()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     override func viewDidDisappear(_ animated: Bool) {
-        //release the resources after
-        AgoraRtcEngineKit.destroy()
-        
-        //leave the LiveMessageChannel
-        leaveAoraRtmChannel()
+        disposeAgora()
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
 
@@ -164,6 +149,25 @@ private extension LiveStreamVC{
         kit = AgoraRtmKit(appId: Constant.AgoraKeys.AGORA_RTM_APP_ID, delegate: self)
     }
     
+    func startLiveStream(){
+        //join the Agora RTC
+        joinAgoraRtcChannel()
+        //login and join the Agora RTM
+        loginToAgoraRTMServer(withUserID: "userA")
+    }
+    
+    func stopliveStream() {
+        leaveAgoraRtcChannel()
+        leaveAoraRtmChannel()
+    }
+    
+    func disposeAgora(){
+        //release the resources after
+        AgoraRtcEngineKit.destroy()
+        
+        //leave the LiveMessageChannel
+        //kit?.destroyChannel(withId: Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME)
+    }
     
     /*
      Example code, on how to use functions from presenter

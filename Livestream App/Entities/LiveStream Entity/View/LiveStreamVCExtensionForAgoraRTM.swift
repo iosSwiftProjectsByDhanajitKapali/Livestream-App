@@ -44,7 +44,7 @@ extension LiveStreamVC{
     func logoutFromAgoraRTMServer(){
         kit?.logout(completion: { [self] (errorCode) in
             if errorCode == AgoraRtmLogoutErrorCode.ok{
-                print("Logout Succesful for user \(String(describing: self.agoraRtmUserID)). Code: \(errorCode)")
+                print("Logout Succesful for user \(String(describing: self.agoraRtmUserID)). Code: \(errorCode.rawValue)")
             }else{
                 displayAlert(alertMessage: "Failed to Logout")
                 print("Logout Failed")
@@ -78,9 +78,9 @@ extension LiveStreamVC{
         }
         channel.leave(completion: { [self] (errorCode) in
             if errorCode == AgoraRtmLeaveChannelErrorCode.ok{
-                print("Joined Channel Succesfully Code: \(errorCode)")
+                print("Left Channel Succesfully Code: \(errorCode.rawValue)")
             }else{
-                displayAlert(alertMessage: "Failed to leave Channel Code: \(errorCode)")
+                displayAlert(alertMessage: "Failed to leave Channel Code: \(errorCode.rawValue)")
             }
         })
     }

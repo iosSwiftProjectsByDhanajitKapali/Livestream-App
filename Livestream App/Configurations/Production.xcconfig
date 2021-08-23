@@ -9,9 +9,9 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "Pods/Target Support Files/Pods-daffo-ios-base/Pods-daffo-ios-base.production.xcconfig"
-#include "Pods/Target Support Files/Pods-daffo-ios-base-daffo-ios-baseUITests/Pods-daffo-ios-base-daffo-ios-baseUITests.production.xcconfig"
-#include "Pods/Target Support Files/Pods-daffo-ios-baseTests/Pods-daffo-ios-baseTests.production.xcconfig"
+#include "Pods/Target Support Files/Pods-Livestream App/Pods-Livestream App.production.xcconfig"
+#include "Pods/Target Support Files/Pods-Livestream App-Livestream AppUITests/Pods-Livestream App-daffo-ios-baseUITests.production.xcconfig"
+#include "Pods/Target Support Files/Pods-Livestream AppTests/Pods-Livestream AppTests.production.xcconfig"
 
 PRODUCT_BUNDLE_IDENTIFIER = com.xyz.appname
 PRODUCT_NAME = AppName

@@ -56,18 +56,6 @@
 		1B36159924E6556C0046DD8E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36159824E6556C0046DD8E /* UIButtonExtension.swift */; };
 		1B36159B24E6557E0046DD8E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36159A24E6557E0046DD8E /* UIViewExtension.swift */; };
 		1B36159D24E655910046DD8E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36159C24E655910046DD8E /* UIColorExtension.swift */; };
-		1B3615AB24E660BE0046DD8E /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615AA24E660BE0046DD8E /* Development.xcconfig */; };
-		1B3615AC24E660BE0046DD8E /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615AA24E660BE0046DD8E /* Development.xcconfig */; };
-		1B3615AD24E660BE0046DD8E /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615AA24E660BE0046DD8E /* Development.xcconfig */; };
-		1B3615AF24E660E10046DD8E /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615AE24E660E10046DD8E /* Staging.xcconfig */; };
-		1B3615B024E660E10046DD8E /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615AE24E660E10046DD8E /* Staging.xcconfig */; };
-		1B3615B124E660E10046DD8E /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615AE24E660E10046DD8E /* Staging.xcconfig */; };
-		1B3615B324E660FE0046DD8E /* PreRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615B224E660FE0046DD8E /* PreRelease.xcconfig */; };
-		1B3615B424E660FE0046DD8E /* PreRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615B224E660FE0046DD8E /* PreRelease.xcconfig */; };
-		1B3615B524E660FE0046DD8E /* PreRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615B224E660FE0046DD8E /* PreRelease.xcconfig */; };
-		1B3615B724E661190046DD8E /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615B624E6610F0046DD8E /* Production.xcconfig */; };
-		1B3615B824E6611A0046DD8E /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615B624E6610F0046DD8E /* Production.xcconfig */; };
-		1B3615B924E6611A0046DD8E /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1B3615B624E6610F0046DD8E /* Production.xcconfig */; };
 		1B3615BC24E66FF50046DD8E /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3615BB24E66FF50046DD8E /* AppUtilities.swift */; };
 		1B3615BE24E670100046DD8E /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3615BD24E670100046DD8E /* DateUtilities.swift */; };
 		4BD74994C6C4EA13FBB739D7 /* Pods_Livestream_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB4EE9D5A024967F5C8025 /* Pods_Livestream_App.framework */; };
@@ -581,7 +569,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Daffodil Software Pvt. Ltd.";
 				TargetAttributes = {
 					1B36155D24E6549B0046DD8E = {
@@ -624,10 +612,6 @@
 			files = (
 				1B36156E24E6549E0046DD8E /* LaunchScreen.storyboard in Resources */,
 				1B36156B24E6549E0046DD8E /* Assets.xcassets in Resources */,
-				1B3615B724E661190046DD8E /* Production.xcconfig in Resources */,
-				1B3615B324E660FE0046DD8E /* PreRelease.xcconfig in Resources */,
-				1B3615AB24E660BE0046DD8E /* Development.xcconfig in Resources */,
-				1B3615AF24E660E10046DD8E /* Staging.xcconfig in Resources */,
 				1B36156924E6549B0046DD8E /* Main.storyboard in Resources */,
 				01BEAF3826CE6C4300F0E968 /* LiveCommentsTableViewCell.xib in Resources */,
 			);
@@ -637,10 +621,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3615B024E660E10046DD8E /* Staging.xcconfig in Resources */,
-				1B3615B824E6611A0046DD8E /* Production.xcconfig in Resources */,
-				1B3615AC24E660BE0046DD8E /* Development.xcconfig in Resources */,
-				1B3615B424E660FE0046DD8E /* PreRelease.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,10 +628,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3615B124E660E10046DD8E /* Staging.xcconfig in Resources */,
-				1B3615B924E6611A0046DD8E /* Production.xcconfig in Resources */,
-				1B3615AD24E660BE0046DD8E /* Development.xcconfig in Resources */,
-				1B3615B524E660FE0046DD8E /* PreRelease.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +891,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -970,7 +946,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -988,6 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S83TL6GCMZ;
 				INFOPLIST_FILE = "Livestream App/PLists/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1005,6 +982,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Livestream App/PLists/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1150,7 +1128,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1167,6 +1145,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Livestream App/PLists/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1264,7 +1243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1281,6 +1260,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Livestream App/PLists/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

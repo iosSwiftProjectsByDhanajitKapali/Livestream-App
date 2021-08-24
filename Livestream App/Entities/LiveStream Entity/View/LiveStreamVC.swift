@@ -68,6 +68,10 @@ class LiveStreamVC: BaseVC {
         }
     }
     
+    @IBAction func goToLatestLiveCommentButtonPressed(_ sender: UIButton) {
+        scrollToFirstRow()
+    }
+    
     @IBAction func heartButtonPressed(_ sender: UIButton) {
         
         //Start the Animation
@@ -156,6 +160,7 @@ private extension LiveStreamVC{
         
         //register the tableViewCell
         liveCommentsTableView.dataSource = self
+        liveCommentsTableView.delegate = self
         liveCommentsTableView.register(UINib(nibName: "LiveCommentsTableViewCell", bundle: nil), forCellReuseIdentifier: "LiveCommentsTableViewCellID")
         liveCommentsTableView.transform = CGAffineTransform (scaleX: -1,y: -1);
         
@@ -191,6 +196,11 @@ private extension LiveStreamVC{
         
         //leave the LiveMessageChannel
         //kit?.destroyChannel(withId: Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME)
+    }
+    
+    func scrollToFirstRow() {
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        self.liveCommentsTableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
     }
     
     /*

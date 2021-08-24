@@ -39,6 +39,9 @@
                                                 <state key="normal" image="go-bottom-icon">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="goToLatestLiveCommentButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0H-du-J8p"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,6 +329,11 @@
             <point key="canvasLocation" x="836" y="80"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="JfW-4P-HBa">
+            <size key="intrinsicContentSize" width="189" height="50"/>
+        </designable>
+    </designables>
     <resources>
         <image name="clock.arrow.2.circlepath" catalog="system" width="128" height="103"/>
         <image name="close-96" width="96" height="96"/>

@@ -28,3 +28,18 @@ extension LiveStreamVC : UITableViewDataSource{
         return cell
     }
 }
+
+//MARK: - TableView Delegate methods
+extension LiveStreamVC : UITableViewDelegate{
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.goToLatestCommentButton.isHidden = false
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.goToLatestCommentButton.isHidden = true
+        }
+    }
+}
+

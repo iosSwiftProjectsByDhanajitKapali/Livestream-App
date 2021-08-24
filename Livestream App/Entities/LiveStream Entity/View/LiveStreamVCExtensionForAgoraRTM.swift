@@ -107,6 +107,7 @@ extension LiveStreamVC{
             self.appendMessage(user: self.agoraRtmUserID!, content: withMessageText)
         })
     }
+    
 }
 
 //MARK: - AgoraRtmDelegate functions
@@ -126,14 +127,14 @@ extension LiveStreamVC : AgoraRtmChannelDelegate{
         appendMessage(user: member.userId, content: message.text)
     }
     func channel(_ channel: AgoraRtmChannel, memberJoined member: AgoraRtmMember) {
-        DispatchQueue.main.async { [unowned self] in
-            print("\(member.userId) joined")
-        }
+        print("\(member.userId) joined")
     }
     
     func channel(_ channel: AgoraRtmChannel, memberLeft member: AgoraRtmMember) {
-        DispatchQueue.main.async { [unowned self] in
-            print("\(member.userId) left")
-        }
+        print("\(member.userId) left")
+    }
+    
+    func channel(_ channel: AgoraRtmChannel, memberCount count: Int32) {
+        self.activePeopleInLivestreamTextLabel.text = String(count-1)
     }
 }

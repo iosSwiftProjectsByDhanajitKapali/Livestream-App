@@ -77,5 +77,7 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         videoCanvas.view = remoteView
         // Sets the remote video view
         agoraKit?.setupRemoteVideo(videoCanvas)
+        
+        print(elapsed)
     }
 }

@@ -31,6 +31,9 @@ class LiveCommentsTableViewCell: UITableViewCell {
 
 extension LiveCommentsTableViewCell{
     func populateCell(fromModel : LiveCommentModel){
+        self.profileImage.setImage(string: fromModel.userName,
+                                   color: .darkGray, circular: false, stroke: false, textAttributes: nil)
+        //self.profileImage.contentMode = .scaleAspectFit
         self.userNameTextLabel.text = fromModel.userName
         self.userCommentTextLabel.text = fromModel.userComment
     }

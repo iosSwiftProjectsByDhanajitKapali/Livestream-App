@@ -9,9 +9,19 @@
 import UIKit
 
 extension LiveStreamVC : UITextFieldDelegate {
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
-   }
-
+    }
+    
+    //defining the task to be done when the return(Go) key is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)    //ending the editing ,collapse keyboard
+        if let message = addCommentTextField.text, !message.isEmpty{
+            sendGroupMessage(withMessageText: message)
+            addCommentTextField.text = ""
+        }
+        return true
+    }
+    
 }

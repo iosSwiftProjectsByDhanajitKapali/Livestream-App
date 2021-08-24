@@ -36,7 +36,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="JmG-fW-fJq"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="go-bottom-icon">
+                                                <state key="normal" image="double-down-arrow-icon">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -62,7 +62,7 @@
                                                     <constraint firstAttribute="width" constant="45" id="xOr-QM-XTp"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Live " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okM-Ft-KxU">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Live " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okM-Ft-KxU">
                                                 <rect key="frame" x="14" y="47" width="28.5" height="16"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
@@ -337,8 +337,8 @@
     <resources>
         <image name="clock.arrow.2.circlepath" catalog="system" width="128" height="103"/>
         <image name="close-96" width="96" height="96"/>
+        <image name="double-down-arrow-icon" width="256" height="256"/>
         <image name="email-send-96" width="96" height="96"/>
-        <image name="go-bottom-icon" width="64" height="64"/>
         <image name="heart-50" width="50" height="50"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="sampleImage" width="396" height="680"/>

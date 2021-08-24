@@ -78,6 +78,11 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         // Sets the remote video view
         agoraKit?.setupRemoteVideo(videoCanvas)
         
-        print(elapsed)
+        self.isHostLiveTextLabel.isHidden = false
     }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
+        self.isHostLiveTextLabel.isHidden = true
+    }
+    
 }

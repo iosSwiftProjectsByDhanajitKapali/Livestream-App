@@ -19,8 +19,6 @@ class CustomAlert: UIView {
 
     //MARK: - Variables
     var delegate : CustomAlertDelegate?
-    //let kCONTENT_XIB_NAME = "CustomAlert"
-    //var view: UIView!
     
     //MARK: - IBOutlets
     @IBOutlet var containerView: UIView!
@@ -46,7 +44,7 @@ class CustomAlert: UIView {
     init(frame: CGRect, data : CustomAlertModel) {
         super.init(frame: frame)
         loadViewFromNib()
-        
+
         //Do the initial setup, and populate the alert with your custom data
         initialSetup()
         populatePopUp(customAlertData: data)
@@ -60,7 +58,7 @@ class CustomAlert: UIView {
         
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-        let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         view.frame = bounds
         addSubview(view)
     } //:BoilerPlate ends

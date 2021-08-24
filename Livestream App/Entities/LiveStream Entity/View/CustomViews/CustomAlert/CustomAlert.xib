@@ -8,9 +8,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAlert" customModule="AppName" customModuleProvider="target">
+            <connections>
+                <outlet property="alertButtonOne" destination="dMD-Xe-w29" id="pqC-DF-q9f"/>
+                <outlet property="alertButtonTwo" destination="l9S-2o-KJk" id="rvf-wB-rUH"/>
+                <outlet property="alertMessage" destination="iAj-vi-zew" id="RHm-63-7rd"/>
+                <outlet property="alertTitle" destination="2Jz-75-vDj" id="gIj-g2-qxo"/>
+                <outlet property="containerView" destination="fgN-ew-wdG" id="Rdb-r6-7jt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomAlert" customModule="AppName" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -39,7 +47,7 @@
                                         <color key="titleColor" red="0.83137254900000002" green="0.63921568630000003" blue="0.1960784314" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="alertButtonTwoPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="u6w-UX-ikE"/>
+                                        <action selector="alertButtonTwoPressed:" destination="-1" eventType="touchUpInside" id="FxD-36-WKR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMD-Xe-w29">
@@ -49,7 +57,7 @@
                                         <color key="titleColor" red="0.83137254900000002" green="0.63921568630000003" blue="0.1960784314" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="alertButtonOnePressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="KNo-yE-l7E"/>
+                                        <action selector="alertButtonOnePressed:" destination="-1" eventType="touchUpInside" id="bH8-zI-3Xf"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -69,19 +77,12 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20050071877655307" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29876386290950724" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fgN-ew-wdG" secondAttribute="trailing" constant="20" id="4DE-46-4gK"/>
                 <constraint firstItem="fgN-ew-wdG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="MnP-de-Zlh"/>
                 <constraint firstItem="fgN-ew-wdG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U4W-ky-YR7"/>
             </constraints>
-            <connections>
-                <outlet property="alertButtonOne" destination="dMD-Xe-w29" id="dx3-tP-zM7"/>
-                <outlet property="alertButtonTwo" destination="l9S-2o-KJk" id="q0E-ui-2A4"/>
-                <outlet property="alertMessage" destination="iAj-vi-zew" id="my8-Hy-UpE"/>
-                <outlet property="alertTitle" destination="2Jz-75-vDj" id="aB2-0H-V3R"/>
-                <outlet property="containerView" destination="fgN-ew-wdG" id="EyG-xi-00R"/>
-            </connections>
             <point key="canvasLocation" x="63.768115942028992" y="103.79464285714285"/>
         </view>
     </objects>

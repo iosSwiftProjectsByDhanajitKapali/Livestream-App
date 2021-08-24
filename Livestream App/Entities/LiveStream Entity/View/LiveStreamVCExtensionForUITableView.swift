@@ -11,6 +11,9 @@ import UIKit
 extension LiveStreamVC{
     func addNewLiveCommentInTableView(comment : LiveCommentModel){
         self.tableViewData.insert(comment, at: 0)
+        if tableViewData.count > 0{
+            liveCommentsTableView.isHidden = false
+        }
         self.liveCommentsTableView.reloadData()
     }
 }
@@ -33,7 +36,11 @@ extension LiveStreamVC : UITableViewDataSource{
 extension LiveStreamVC : UITableViewDelegate{
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.goToLatestCommentButton.isHidden = false
+        if tableViewData.count <= 5 {
+            goToLatestCommentButton.isHidden = true
+        }else{
+            self.goToLatestCommentButton.isHidden = false
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

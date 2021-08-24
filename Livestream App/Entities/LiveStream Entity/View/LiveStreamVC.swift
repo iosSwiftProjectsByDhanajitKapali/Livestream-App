@@ -49,15 +49,15 @@ class LiveStreamVC: BaseVC {
     //MARK: - ALL IBActions
     @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
         print("leave button pressed")
-        stopliveStream()
-        navigationController?.popViewController(animated: true)
+//        stopliveStream()
+//        navigationController?.popViewController(animated: true)
         
         //loading the XIB into our view
-//        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
-//        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
-//        customAlertView.delegate = self
-//        customAlertView.tag = 1
-//        self.view.addSubview(customAlertView)
+        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
+        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
+        customAlertView.delegate = self
+        customAlertView.tag = 1
+        self.view.addSubview(customAlertView)
         
     }
     
@@ -159,6 +159,7 @@ private extension LiveStreamVC{
         addCommentTextField.delegate = self
         
         //register the tableViewCell
+        liveCommentsTableView.isHidden = true
         liveCommentsTableView.dataSource = self
         liveCommentsTableView.delegate = self
         liveCommentsTableView.register(UINib(nibName: "LiveCommentsTableViewCell", bundle: nil), forCellReuseIdentifier: "LiveCommentsTableViewCellID")

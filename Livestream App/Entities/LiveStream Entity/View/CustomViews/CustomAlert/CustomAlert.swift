@@ -8,8 +8,20 @@
 
 import UIKit
 
+/*
+    NOTE:- There are two buttons in the CustomAlert, the button at extreme right is considered to be at index = 1, and the button beside its left is at index = 2
+*/
+protocol CustomAlertDelegate {
+    func alertButtonPressed(atIndex : Int)
+}
+
 class CustomAlert: UIView {
 
+    //MARK: - Variables
+    var delegate : CustomAlertDelegate?
+    //let kCONTENT_XIB_NAME = "CustomAlert"
+    //var view: UIView!
+    
     //MARK: - IBOutlets
     @IBOutlet var containerView: UIView!
     @IBOutlet var alertTitle: UILabel!
@@ -21,10 +33,13 @@ class CustomAlert: UIView {
     //MARK: - IBActions
     @IBAction func alertButtonOnePressed(_ sender: UIButton) {
         print("Button One Pressed")
+        self.delegate?.alertButtonPressed(atIndex: 1)
+        
     }
     
     @IBAction func alertButtonTwoPressed(_ sender: UIButton) {
         print("Button two pressed")
+        self.delegate?.alertButtonPressed(atIndex: 2)
     }
     
     //Boilerplate to load xib

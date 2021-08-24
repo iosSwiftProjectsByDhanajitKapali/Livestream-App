@@ -51,6 +51,14 @@ class LiveStreamVC: BaseVC {
         print("leave button pressed")
         stopliveStream()
         navigationController?.popViewController(animated: true)
+        
+        //loading the XIB into our view
+//        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
+//        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
+//        customAlertView.delegate = self
+//        customAlertView.tag = 1
+//        self.view.addSubview(customAlertView)
+        
     }
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
@@ -107,6 +115,22 @@ extension LiveStreamVC : PresenterDelegate{
     func didRecieveFailedRepsonse(errorMessage : String) {
         //Process the Error
     }
+}
+
+//MARK: - CustomAlertDelegate Functions
+extension LiveStreamVC : CustomAlertDelegate{
+    func alertButtonPressed(atIndex: Int) {
+        print("Namaste from LivestreamVC")
+        if atIndex == 1 {
+            stopliveStream()
+            navigationController?.popViewController(animated: true)
+        }else{
+            if let viewWithTag = self.view.viewWithTag(1){
+                viewWithTag.removeFromSuperview()
+            }
+        }
+    }
+    
 }
 
 //MARK: - Private functions

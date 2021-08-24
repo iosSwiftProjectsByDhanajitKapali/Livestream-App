@@ -47,13 +47,16 @@ extension HomeVC{
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        joinLivestreamButton.backgroundColor = .systemPink
+        addDesignToUI()
     }
 }
 
 private extension HomeVC{
     func initialSetup(){
         navigationController?.navigationBar.barTintColor = UIColor.black
+    }
+    func addDesignToUI(){
+        joinLivestreamButton.backgroundColor = .systemPink
         joinLivestreamButton.layer.cornerRadius = 20
     }
 }

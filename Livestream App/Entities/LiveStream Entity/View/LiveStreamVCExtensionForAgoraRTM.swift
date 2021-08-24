@@ -135,6 +135,6 @@ extension LiveStreamVC : AgoraRtmChannelDelegate{
     }
     
     func channel(_ channel: AgoraRtmChannel, memberCount count: Int32) {
-        self.activePeopleInLivestreamTextLabel.text = String(count-1)
+        
     }
 }

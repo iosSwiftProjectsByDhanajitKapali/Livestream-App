@@ -85,4 +85,23 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         self.isHostLiveTextLabel.isHidden = true
     }
     
+    func rtcEngine(_ engine: AgoraRtcEngineKit, reportRtcStats stats: AgoraChannelStats) {
+        let (h,m,s) = secondsToHoursMinutesSeconds(seconds: stats.duration)
+        var timeInString = ""
+        if stats.duration >= 3600{
+            timeInString = "\(h):\(m):\(s)"
+        }else{
+            timeInString = "\(m):\(s)"
+        }
+        self.livestreamUptimeTextLabel.text = timeInString
+        
+        self.activePeopleInLivestreamTextLabel.text = String(stats.userCount)
+    }
+    
+}
+
+private extension LiveStreamVC{
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
 }

@@ -50,8 +50,8 @@ class LiveStreamVC: BaseVC {
     @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
         print("leave button pressed")
         
-        presentCustomAlert()
-        
+        //presentCustomAlert()
+        presentModalController()
     }
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
@@ -205,6 +205,14 @@ private extension LiveStreamVC{
         customAlertView.delegate = self
         customAlertView.tag = 1
         self.view.addSubview(customAlertView)
+    }
+    
+    func presentModalController() {
+        let vc = CustomModalViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        // keep false
+        // modal animation will be handled in VC itself
+        self.present(vc, animated: false)
     }
     
     func scrollToFirstRow() {

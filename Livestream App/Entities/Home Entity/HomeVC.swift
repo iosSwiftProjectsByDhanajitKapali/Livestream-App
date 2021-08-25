@@ -58,5 +58,7 @@ private extension HomeVC{
     func addDesignToUI(){
         joinLivestreamButton.backgroundColor = .systemPink
         joinLivestreamButton.layer.cornerRadius = 20
+        
+       
     }
 }

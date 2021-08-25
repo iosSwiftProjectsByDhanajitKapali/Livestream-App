@@ -86,6 +86,7 @@ extension LiveStreamVC{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addDesignToUI()
         initialSetup()
         
         //Setup the Presenter
@@ -138,9 +139,7 @@ extension LiveStreamVC : CustomAlertDelegate{
 //MARK: - Private functions
 private extension LiveStreamVC{
     
-    func initialSetup(){
-        //Call methods defined in BaseVC to design navigation bar.
-        //Other initializations
+    func addDesignToUI(){
         navigationController?.navigationBar.barTintColor = UIColor.black
         remoteView.layer.cornerRadius = 10
         self.addCommentTextField.layer.cornerRadius = 20
@@ -149,6 +148,13 @@ private extension LiveStreamVC{
         addCommentTextField.setLeftPaddingPoints(10)
         
         hostProfileImageView.makeImageCircular()
+        
+    }
+    
+    func initialSetup(){
+        //Call methods defined in BaseVC to design navigation bar.
+        //Other initializations
+        
         goToLatestCommentButton.isHidden = true
         
         //hide the leave button

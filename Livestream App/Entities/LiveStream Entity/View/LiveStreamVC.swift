@@ -50,12 +50,7 @@ class LiveStreamVC: BaseVC {
     @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
         print("leave button pressed")
         
-        //loading the XIB into our view
-        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
-        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
-        customAlertView.delegate = self
-        customAlertView.tag = 1
-        self.view.addSubview(customAlertView)
+        presentCustomAlert()
         
     }
     
@@ -201,6 +196,15 @@ private extension LiveStreamVC{
         
         //leave the LiveMessageChannel
         //kit?.destroyChannel(withId: Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME)
+    }
+    
+    func presentCustomAlert(){
+        //loading the XIB into our view
+        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
+        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
+        customAlertView.delegate = self
+        customAlertView.tag = 1
+        self.view.addSubview(customAlertView)
     }
     
     func scrollToFirstRow() {

@@ -9,64 +9,66 @@
 import Foundation
 import AgoraRtcKit
 
-//MARK: - Agora Live Streaming
+
+//MARK: - Agora RTC Manager
 extension LiveStreamVC{
     
-    func initView() {
-            // Initializes the remote video view. This view displays video when a remote host joins the channel
-            remoteView = UIView()
-            self.view.addSubview(remoteView)
-            // Initializes the local video view. This view displays video when the local user is a host
-            //localView = UIView()
-            //self.view.addSubview(localView)
-    }
-    
     func initializeAgoraEngine() {
-        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: Constant.AgoraKeys.AGORA_RTC_APP_ID, delegate: self)
+        agoraRtcKit = AgoraRtcEngineKit.sharedEngine(withAppId: Constant.AgoraKeys.AGORA_RTC_APP_ID, delegate: self)
     }
     
     func setChannelProfile(){
-        agoraKit?.setChannelProfile(.liveBroadcasting)
+        agoraRtcKit?.setChannelProfile(.liveBroadcasting)
     }
     
     func setClientRole(){
         // Set the client role as "host"
-        agoraKit?.setClientRole(.broadcaster)
+        //agoraRtcKit?.setClientRole(.broadcaster)
         // Set the client role as "audience"
         let options: AgoraClientRoleOptions = AgoraClientRoleOptions()
         options.audienceLatencyLevel = AgoraAudienceLatencyLevelType.lowLatency
-        agoraKit?.setClientRole(.audience, options: options)
+        agoraRtcKit?.setClientRole(.audience, options: options)
     }
     
     func setupLocalVideo() {
         // Enables the video module
-        agoraKit?.enableVideo()
+        agoraRtcKit?.enableVideo()
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = 0
         videoCanvas.renderMode = .hidden
         //videoCanvas.view = localView
         // Sets the local video view
-        agoraKit?.setupLocalVideo(videoCanvas)
+        agoraRtcKit?.setupLocalVideo(videoCanvas)
     }
     
     func joinAgoraRtcChannel(){
         print("Joining Channel....")
         // The uid of each user in the channel must be unique.
-        agoraKit?.joinChannel(byToken: Constant.AgoraKeys.AGORA_RTC_TEMP_TOKEN, channelId: Constant.AgoraKeys.AGORA_RTC_CHANNEL_NAME, info: nil, uid: 0, joinSuccess: { (channel, uid, elapsed) in
+        //AgoraRtcChannel().setRtcChannelDelegate(self)
+        agoraRtcKit?.joinChannel(byToken: Constant.AgoraKeys.AGORA_RTC_TEMP_TOKEN, channelId: Constant.AgoraKeys.AGORA_RTC_CHANNEL_NAME, info: nil, uid: 0, joinSuccess: { (channel, uid, elapsed) in
             
             print("Successfully Joined the Channel")
         })
     }
     
+    
+    
     func leaveAgoraRtcChannel() {
         print("Leaving Channel")
-        agoraKit?.leaveChannel(nil)
+        agoraRtcKit?.leaveChannel(nil)
         
         //release the resources after
         //AgoraRtcEngineKit.destroy()
     }
+    
+    /* Not Working*/
+    func getUserInfo(forUid : UInt){
+        let temp = agoraRtcKit?.getUserInfo(byUid: forUid, withError: nil)
+        print(temp?.userAccount)
+    }
 }
 
+//MARK: - AgoraRtcEngineDelegate methods
 extension LiveStreamVC : AgoraRtcEngineDelegate{
     // Monitors the didJoinedOfUid callback
     // The SDK triggers the callback when a remote host joins the channel
@@ -76,9 +78,12 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         videoCanvas.renderMode = .hidden
         videoCanvas.view = remoteView
         // Sets the remote video view
-        agoraKit?.setupRemoteVideo(videoCanvas)
+        agoraRtcKit?.setupRemoteVideo(videoCanvas)
         
         self.isHostLiveTextLabel.isHidden = false
+        
+        print(uid)
+        getUserInfo(forUid: uid)
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
@@ -98,8 +103,31 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         self.activePeopleInLivestreamTextLabel.text = String(stats.userCount)
     }
     
+    /* Not Working*/
+    func rtcEngine(_ engine: AgoraRtcEngineKit, remoteVideoStats stats: AgoraRtcRemoteVideoStats) {
+        print(stats.publishDuration)
+    }
+    
+    /* Not Working*/
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didUpdatedUserInfo userInfo: AgoraUserInfo, withUid uid: UInt) {
+        print(userInfo.uid)
+        print(userInfo.userAccount)
+    }
+    
 }
 
+//MARK: - AgoraRtcChannelDelegate methods
+extension LiveStreamVC : AgoraRtcChannelDelegate{
+    
+    /* Not Working*/
+    func rtcChannel(_ rtcChannel: AgoraRtcChannel, remoteVideoStats stats: AgoraRtcRemoteVideoStats) {
+        print(stats.publishDuration)
+    }
+    
+
+}
+
+//MARK: - Private methods
 private extension LiveStreamVC{
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
       return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)

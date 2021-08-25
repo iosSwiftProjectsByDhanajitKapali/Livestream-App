@@ -12,7 +12,7 @@ extension Constant{
     
     struct AgoraKeys {
         static let AGORA_RTC_APP_ID = "c3a94e784e6741e9a08779dc87b66cf4"
-        static let AGORA_RTC_TEMP_TOKEN = "006c3a94e784e6741e9a08779dc87b66cf4IABM30fgHAL/OQmhv0rO2XJ5k7vHei5xBfPk5SqWBOfqNCMni+gAAAAAEAALrnX4WhMmYQEAAQBaEyZh"
+        static let AGORA_RTC_TEMP_TOKEN = "006c3a94e784e6741e9a08779dc87b66cf4IAARGbRhEqBJq3XzqOLaSyCk96P2hRDV38a2RSZhQgm0aCMni+gAAAAAEAALrnX4Lk8nYQEAAQAuTydh"
         static let AGORA_RTC_CHANNEL_NAME = "demoChannel"
         
         

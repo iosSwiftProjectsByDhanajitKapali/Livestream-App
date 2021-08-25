@@ -35,7 +35,7 @@ class LiveStreamVC: BaseVC {
     
     
     //Variables for AgoraRTC
-    var agoraKit: AgoraRtcEngineKit?
+    var agoraRtcKit: AgoraRtcEngineKit?
 
     
     //variables used for AgoraRTM

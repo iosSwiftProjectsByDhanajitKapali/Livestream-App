@@ -166,6 +166,8 @@ private extension LiveStreamVC{
         //Call methods defined in BaseVC to design navigation bar.
         //Other initializations
         
+        SceneDelegate.delegate = self
+        
         goToLatestCommentButton.isHidden = true
         
         //hide the leave button

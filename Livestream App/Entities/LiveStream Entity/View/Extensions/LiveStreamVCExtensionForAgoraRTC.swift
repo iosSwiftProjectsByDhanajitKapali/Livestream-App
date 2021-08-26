@@ -45,28 +45,24 @@ extension LiveStreamVC{
     func stopVideoStream(){
         if let id = HostID{
             agoraRtcKit?.muteRemoteVideoStream(id, mute: true)
-            liveStreamHostVideoStatus = .videoIsOff
         }
     }
     
     func startVideoStream(){
         if let id = HostID{
             agoraRtcKit?.muteRemoteVideoStream(id, mute: false)
-            liveStreamHostVideoStatus = .videoIsOn
         }
     }
     
     func stopAudioStream(){
         if let id = HostID{
             agoraRtcKit?.muteRemoteAudioStream(id, mute: true)
-            liveStreamHostAudioStatus = .audioIsOff
         }
     }
     
     func startAudioStream(){
         if let id = HostID{
             agoraRtcKit?.muteRemoteAudioStream(id, mute: false)
-            liveStreamHostAudioStatus = .audioIsOn
         }
     }
     

@@ -8,6 +8,11 @@
 
 import Foundation
 
+//MARK: - Global Variable
+//var GlobalLiveStreamHostVideoStatus =
+struct GlobalLiveStreamHostVideoStatus{
+    static var theStatus  = LiveStreamHostVideoStatus.videoIsOn
+}
 
 //MARK: - Public methods
 extension LiveStreamVC {
@@ -18,7 +23,7 @@ extension LiveStreamVC {
         vc.setBottomSheetTitle(withTitle: "")
         
         if liveStreamHostVideoStatus == .videoIsOn {
-            vc.addNewButton(newButton: BottomSheetButton(imageName: "no-video-50", buttonTitle: "Stop Video"))
+            vc.addNewButton(newButton: BottomSheetButton(imageName: "no-video-50", buttonTitle: "Audio Only"))
         }else{
             vc.addNewButton(newButton: BottomSheetButton(imageName: "video-call-45", buttonTitle: "Resume Video"))
         }
@@ -45,16 +50,22 @@ extension LiveStreamVC : BottomSheetDelegate{
         if(atIndex == 0){
             if liveStreamHostVideoStatus == .videoIsOn {
                 stopVideoStream()
+                liveStreamHostVideoStatus = .videoIsOff
+                GlobalLiveStreamHostVideoStatus.theStatus = .videoIsOff
             }else{
                 startVideoStream()
+                liveStreamHostVideoStatus = .videoIsOn
+                GlobalLiveStreamHostVideoStatus.theStatus = .videoIsOn
             }
             
             
         } else if(atIndex == 1){
             if liveStreamHostAudioStatus == .audioIsOn {
                 stopAudioStream()
+                liveStreamHostAudioStatus = .audioIsOff
             }else{
                 startAudioStream()
+                liveStreamHostAudioStatus = .audioIsOn
             }
             
             

@@ -51,7 +51,7 @@ class LiveStreamVC: BaseVC {
         print("leave button pressed")
         
         //presentCustomAlert()
-        presentModalController()
+        presentBottomSheet()
     }
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
@@ -118,7 +118,6 @@ extension LiveStreamVC : PresenterDelegate{
 //MARK: - CustomAlertDelegate Functions
 extension LiveStreamVC : CustomAlertDelegate{
     func alertButtonPressed(atIndex: Int) {
-        print("Namaste from LivestreamVC")
         if atIndex == 1 {
             stopliveStream()
             navigationController?.popViewController(animated: true)
@@ -207,11 +206,11 @@ private extension LiveStreamVC{
         self.view.addSubview(customAlertView)
     }
     
-    func presentModalController() {
+    func presentBottomSheet() {
         let vc = BottomSheet()
         vc.modalPresentationStyle = .overCurrentContext
         vc.delegate = self
-        vc.initializeBottomSheet(withTitle: "Menu", newButton: BottomSheetButton(imageName: "no-video-50", buttonTitle: "Voice Only"))
+        vc.initializeBottomSheet(withTitle: "", newButton: BottomSheetButton(imageName: "no-video-50", buttonTitle: "Voice Only"))
         vc.addNewButton(newButton: BottomSheetButton(imageName: "feedback-50", buttonTitle: "Report"))
         vc.addNewButton(newButton: BottomSheetButton(imageName: "logout-rounded-left-50", buttonTitle: "Exit Livestream"))
         
@@ -239,7 +238,9 @@ private extension LiveStreamVC{
 extension LiveStreamVC : BottomSheetDelegate{
     
     func bottomSheetButtonPressed(atIndex: Int) {
-        print("button pressed at \(atIndex)")
+        if(atIndex == 2){
+            presentCustomAlert()
+        }
     }
     
 }

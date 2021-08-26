@@ -9,7 +9,12 @@
 import UIKit
 
 class CustomModalViewController: UIViewController {
-    // define lazy views
+    
+    //MARK: - Variables
+    
+    let arr = ["hello", "hi", "yo","hello", "hi", "yo","hello", "hi", "yo"]
+    
+    //START : DEFINE LAZY VIEWS
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Get Started"
@@ -26,9 +31,17 @@ class CustomModalViewController: UIViewController {
         return label
     }()
     
+    lazy var mytableView : UITableView = {
+        let table = UITableView()
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return table
+    }()
+    
+    //END : DEFINE LAZY VIEWS
+    
     lazy var contentStackView: UIStackView = {
         let spacer = UIView()
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, notesLabel, spacer])
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, mytableView, spacer])
         stackView.axis = .vertical
         stackView.spacing = 12.0
         return stackView
@@ -61,10 +74,19 @@ class CustomModalViewController: UIViewController {
     var containerViewHeightConstraint: NSLayoutConstraint?
     var containerViewBottomConstraint: NSLayoutConstraint?
     
+}
+
+//MARK: - Lifecycle methods
+extension CustomModalViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()
+        
+        mytableView.delegate = self
+        mytableView.dataSource = self
+        
         // tap gesture on dimmed view to dismiss
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleCloseAction))
         dimmedView.addGestureRecognizer(tapGesture)
@@ -72,15 +94,21 @@ class CustomModalViewController: UIViewController {
         setupPanGesture()
     }
     
-    @objc func handleCloseAction() {
-        animateDismissView()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateShowDimmedView()
         animatePresentContainer()
     }
+}
+
+//MARK: - Private methods
+private extension CustomModalViewController{
+    
+    @objc func handleCloseAction() {
+        animateDismissView()
+    }
+    
+   
     
     func setupView() {
         view.backgroundColor = .clear
@@ -136,7 +164,11 @@ class CustomModalViewController: UIViewController {
         view.addGestureRecognizer(panGesture)
     }
     
-    // MARK: Pan gesture handler
+}
+
+// MARK: Pan gesture handler
+extension CustomModalViewController{
+    
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
         // Drag to top will be minus value and vice versa
@@ -194,8 +226,11 @@ class CustomModalViewController: UIViewController {
         // Save current height
         currentContainerHeight = height
     }
+}
+
+// MARK: Present and dismiss animation
+extension CustomModalViewController{
     
-    // MARK: Present and dismiss animation
     func animatePresentContainer() {
         // update bottom constraint in animation block
         UIView.animate(withDuration: 0.3) {
@@ -227,5 +262,28 @@ class CustomModalViewController: UIViewController {
             // call this to trigger refresh constraint
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+//MARK: - UITableViewDataSource methods
+extension CustomModalViewController : UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = mytableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = arr[indexPath.row]
+        return cell
+    }
+    
+}
+
+//MARK: - UITableViewDelegate methods
+extension CustomModalViewController : UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        mytableView.deselectRow(at: indexPath, animated: false)
     }
 }

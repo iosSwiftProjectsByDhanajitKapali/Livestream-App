@@ -208,8 +208,13 @@ private extension LiveStreamVC{
     }
     
     func presentModalController() {
-        let vc = CustomModalViewController()
+        let vc = BottomSheet()
         vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        vc.initializeBottomSheet(withTitle: "Menu", newButton: BottomSheetButton(imageName: "no-video-50", buttonTitle: "Voice Only"))
+        vc.addNewButton(newButton: BottomSheetButton(imageName: "feedback-50", buttonTitle: "Report"))
+        vc.addNewButton(newButton: BottomSheetButton(imageName: "logout-rounded-left-50", buttonTitle: "Exit Livestream"))
+        
         // keep false
         // modal animation will be handled in VC itself
         self.present(vc, animated: false)
@@ -228,6 +233,15 @@ private extension LiveStreamVC{
         presenter.getData()
     }
    
+}
+
+//MARK: - BottomSheetDelegate methods
+extension LiveStreamVC : BottomSheetDelegate{
+    
+    func bottomSheetButtonPressed(atIndex: Int) {
+        print("button pressed at \(atIndex)")
+    }
+    
 }
 
 

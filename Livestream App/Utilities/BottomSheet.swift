@@ -8,21 +8,28 @@
 
 import UIKit
 
-class CustomModalViewController: UIViewController {
+protocol BottomSheetDelegate {
+    func bottomSheetButtonPressed(atIndex : Int)
+}
+
+class BottomSheet: UIViewController {
     
     //MARK: - Variables
     
-    let arr = ["hello", "hi", "yo","hello", "hi", "yo","hello", "hi", "yo"]
+    var delegate : BottomSheetDelegate?
+    
+    private var bottomSheetButtons = [BottomSheetButton]()
+    private var bottomSheetTitle : String = ""
     
     //START : DEFINE LAZY VIEWS
-    lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Get Started"
+        label.text = bottomSheetTitle
         label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
-    lazy var notesLabel: UILabel = {
+    private lazy var notesLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem fringilla ut morbi tincidunt augue interdum. \n\nUt morbi tincidunt augue interdum velit euismod in pellentesque massa. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a. Eget nullam non nisi est sit amet. Odio pellentesque diam volutpat commodo. Id eu nisl nunc mi ipsum faucibus vitae.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem fringilla ut morbi tincidunt augue interdum. Ut morbi tincidunt augue interdum velit euismod in pellentesque massa."
         label.font = .systemFont(ofSize: 16)
@@ -31,7 +38,7 @@ class CustomModalViewController: UIViewController {
         return label
     }()
     
-    lazy var mytableView : UITableView = {
+    private lazy var mytableView : UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
@@ -39,7 +46,7 @@ class CustomModalViewController: UIViewController {
     
     //END : DEFINE LAZY VIEWS
     
-    lazy var contentStackView: UIStackView = {
+    private lazy var contentStackView: UIStackView = {
         let spacer = UIView()
         let stackView = UIStackView(arrangedSubviews: [titleLabel, mytableView, spacer])
         stackView.axis = .vertical
@@ -47,7 +54,7 @@ class CustomModalViewController: UIViewController {
         return stackView
     }()
     
-    lazy var containerView: UIView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 16
@@ -55,8 +62,8 @@ class CustomModalViewController: UIViewController {
         return view
     }()
     
-    let maxDimmedAlpha: CGFloat = 0.6
-    lazy var dimmedView: UIView = {
+    private let maxDimmedAlpha: CGFloat = 0.6
+    private lazy var dimmedView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.alpha = maxDimmedAlpha
@@ -64,20 +71,34 @@ class CustomModalViewController: UIViewController {
     }()
     
     // Constants
-    let defaultHeight: CGFloat = 300
-    let dismissibleHeight: CGFloat = 200
-    let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
+    private let defaultHeight: CGFloat = 300
+    private let dismissibleHeight: CGFloat = 200
+    private let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
     // keep current new height, initial is default height
-    var currentContainerHeight: CGFloat = 300
+    private var currentContainerHeight: CGFloat = 300
     
     // Dynamic container constraint
-    var containerViewHeightConstraint: NSLayoutConstraint?
-    var containerViewBottomConstraint: NSLayoutConstraint?
+    private var containerViewHeightConstraint: NSLayoutConstraint?
+    private var containerViewBottomConstraint: NSLayoutConstraint?
     
 }
 
+//MARK: - Public functions
+extension BottomSheet{
+    
+    ///Add New Button in the Bottom Sheet
+    func initializeBottomSheet(withTitle: String, newButton : BottomSheetButton){
+        bottomSheetTitle = withTitle
+        bottomSheetButtons.append(newButton)
+    }
+    
+    func addNewButton(newButton : BottomSheetButton){
+        bottomSheetButtons.append(newButton)
+    }
+}
+
 //MARK: - Lifecycle methods
-extension CustomModalViewController{
+extension BottomSheet{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +123,7 @@ extension CustomModalViewController{
 }
 
 //MARK: - Private methods
-private extension CustomModalViewController{
+private extension BottomSheet{
     
     @objc func handleCloseAction() {
         animateDismissView()
@@ -167,7 +188,7 @@ private extension CustomModalViewController{
 }
 
 // MARK: Pan gesture handler
-extension CustomModalViewController{
+private extension BottomSheet{
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
@@ -229,7 +250,7 @@ extension CustomModalViewController{
 }
 
 // MARK: Present and dismiss animation
-extension CustomModalViewController{
+private extension BottomSheet{
     
     func animatePresentContainer() {
         // update bottom constraint in animation block
@@ -266,24 +287,36 @@ extension CustomModalViewController{
 }
 
 //MARK: - UITableViewDataSource methods
-extension CustomModalViewController : UITableViewDataSource{
+extension BottomSheet : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return bottomSheetButtons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mytableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arr[indexPath.row]
+        cell.textLabel?.text = bottomSheetButtons[indexPath.row].buttonTitle
+        
+        cell.imageView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        cell.imageView?.image = UIImage(named: bottomSheetButtons[indexPath.row].imageName)
+        
         return cell
     }
     
 }
 
 //MARK: - UITableViewDelegate methods
-extension CustomModalViewController : UITableViewDelegate{
+extension BottomSheet : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mytableView.deselectRow(at: indexPath, animated: false)
+        self.delegate?.bottomSheetButtonPressed(atIndex: indexPath.row)
     }
+}
+
+
+//MARK: - BottomSheet Button Model
+struct BottomSheetButton{
+    let imageName : String
+    let buttonTitle : String
 }

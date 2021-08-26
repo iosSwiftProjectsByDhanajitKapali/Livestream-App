@@ -22,6 +22,12 @@ class BottomSheet: UIViewController {
     private var bottomSheetTitle : String = ""
     
     //START : DEFINE LAZY VIEWS
+    private lazy var notchAtTop : UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        return view
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = bottomSheetTitle
@@ -39,7 +45,7 @@ class BottomSheet: UIViewController {
     
     private lazy var contentStackView: UIStackView = {
         let spacer = UIView()
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, mytableView, spacer])
+        let stackView = UIStackView(arrangedSubviews: [notchAtTop, titleLabel, mytableView, spacer])
         stackView.axis = .vertical
         stackView.spacing = 12.0
         return stackView
@@ -62,7 +68,7 @@ class BottomSheet: UIViewController {
     }()
     
     // Constants
-    private let defaultHeight: CGFloat = 300
+    private let defaultHeight: CGFloat = 250
     private let dismissibleHeight: CGFloat = 200
     private let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
     // keep current new height, initial is default height

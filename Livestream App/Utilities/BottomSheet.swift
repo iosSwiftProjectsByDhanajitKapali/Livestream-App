@@ -68,7 +68,7 @@ class BottomSheet: UIViewController {
     }()
     
     // Constants
-    private let defaultHeight: CGFloat = 250
+    private let defaultHeight: CGFloat = 300
     private let dismissibleHeight: CGFloat = 200
     private let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
     // keep current new height, initial is default height
@@ -89,8 +89,17 @@ extension BottomSheet{
         bottomSheetButtons.append(newButton)
     }
     
+    func setBottomSheetTitle(withTitle : String){
+        bottomSheetTitle = withTitle
+    }
+    
     func addNewButton(newButton : BottomSheetButton){
         bottomSheetButtons.append(newButton)
+    }
+    
+    func updateBottomSheetButton(withButton : BottomSheetButton, atIndex : Int){
+        bottomSheetButtons[atIndex] = withButton
+        mytableView.reloadData()
     }
 }
 

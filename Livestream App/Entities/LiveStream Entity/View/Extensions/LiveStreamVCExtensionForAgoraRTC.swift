@@ -9,6 +9,7 @@
 import Foundation
 import AgoraRtcKit
 
+private var HostID : UInt? = nil
 
 //MARK: - Agora RTC Manager
 extension LiveStreamVC{
@@ -39,6 +40,34 @@ extension LiveStreamVC{
         //videoCanvas.view = localView
         // Sets the local video view
         agoraRtcKit?.setupLocalVideo(videoCanvas)
+    }
+    
+    func stopVideoStream(){
+        if let id = HostID{
+            agoraRtcKit?.muteRemoteVideoStream(id, mute: true)
+            liveStreamHostVideoStatus = .videoIsOff
+        }
+    }
+    
+    func startVideoStream(){
+        if let id = HostID{
+            agoraRtcKit?.muteRemoteVideoStream(id, mute: false)
+            liveStreamHostVideoStatus = .videoIsOn
+        }
+    }
+    
+    func stopAudioStream(){
+        if let id = HostID{
+            agoraRtcKit?.muteRemoteAudioStream(id, mute: true)
+            liveStreamHostAudioStatus = .audioIsOff
+        }
+    }
+    
+    func startAudioStream(){
+        if let id = HostID{
+            agoraRtcKit?.muteRemoteAudioStream(id, mute: false)
+            liveStreamHostAudioStatus = .audioIsOn
+        }
     }
     
     func joinAgoraRtcChannel(){
@@ -82,6 +111,7 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         
         self.isHostLiveTextLabel.isHidden = false
         
+        HostID = uid
         print(uid)
         getUserInfo(forUid: uid)
     }

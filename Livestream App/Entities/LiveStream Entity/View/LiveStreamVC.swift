@@ -13,7 +13,26 @@ import AgoraRtmKit
 
 class LiveStreamVC: BaseVC {
 
-    //MARK: - All IBOutlets
+    //MARK: - Private Variables
+    private var presenter : Presenter!
+    
+    
+    //MARK: - Public Variables
+    var tableViewData = [LiveCommentModel]()
+    
+    //Variables for AgoraRTC
+    var agoraRtcKit: AgoraRtcEngineKit?
+
+    //variables used for AgoraRTM
+    var kit : AgoraRtmKit?
+    var channel : AgoraRtmChannel?
+    var agoraRtmUserID : String?
+   
+    var liveStreamHostAudioStatus : LiveStreamHostAudioStatus = .audioIsOn
+    var liveStreamHostVideoStatus : LiveStreamHostVideoStatus = .videoIsOn
+
+    
+    //MARK: - IBOutlets
     @IBOutlet var hostProfileImageView: UIImageView!
     @IBOutlet var hostUserNameTextLabel: UILabel!
     @IBOutlet var isHostLiveTextLabel: UILabel!
@@ -29,26 +48,8 @@ class LiveStreamVC: BaseVC {
     @IBOutlet var leaveLivestreamButton: UIButton!
     
     
-    //MARK: - Variables Used in LiveStreamVC
-    private var presenter : Presenter!
-    var tableViewData = [LiveCommentModel]()
-    
-    
-    //Variables for AgoraRTC
-    var agoraRtcKit: AgoraRtcEngineKit?
-
-    
-    //variables used for AgoraRTM
-    var kit : AgoraRtmKit?
-    var channel : AgoraRtmChannel?
-    
-    var agoraRtmUserID : String?
-   
-
-    
-    //MARK: - ALL IBActions
+    //MARK: - IBActions
     @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
-        print("leave button pressed")
         
         //presentCustomAlert()
         presentBottomSheet()
@@ -75,6 +76,7 @@ class LiveStreamVC: BaseVC {
     
     
 }
+
 
 //MARK: - LifeCycle Methods
 extension LiveStreamVC{
@@ -115,6 +117,7 @@ extension LiveStreamVC : PresenterDelegate{
     }
 }
 
+
 //MARK: - CustomAlertDelegate Functions
 extension LiveStreamVC : CustomAlertDelegate{
     func alertButtonPressed(atIndex: Int) {
@@ -129,6 +132,20 @@ extension LiveStreamVC : CustomAlertDelegate{
     }
     
 }
+
+
+//MARK: - Public Methods
+extension LiveStreamVC{
+    func presentCustomAlert(){
+        //loading the XIB into our view
+        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
+        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
+        customAlertView.delegate = self
+        customAlertView.tag = 1
+        self.view.addSubview(customAlertView)
+    }
+}
+
 
 //MARK: - Private functions
 private extension LiveStreamVC{
@@ -197,28 +214,6 @@ private extension LiveStreamVC{
         //kit?.destroyChannel(withId: Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME)
     }
     
-    func presentCustomAlert(){
-        //loading the XIB into our view
-        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
-        let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
-        customAlertView.delegate = self
-        customAlertView.tag = 1
-        self.view.addSubview(customAlertView)
-    }
-    
-    func presentBottomSheet() {
-        let vc = BottomSheet()
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.delegate = self
-        vc.initializeBottomSheet(withTitle: "", newButton: BottomSheetButton(imageName: "no-video-50", buttonTitle: "Voice Only"))
-        vc.addNewButton(newButton: BottomSheetButton(imageName: "feedback-50", buttonTitle: "Report"))
-        vc.addNewButton(newButton: BottomSheetButton(imageName: "logout-rounded-left-50", buttonTitle: "Exit Livestream"))
-        
-        // keep false
-        // modal animation will be handled in VC itself
-        self.present(vc, animated: false)
-    }
-    
     func scrollToFirstRow() {
         let indexPath = NSIndexPath(row: 0, section: 0)
         self.liveCommentsTableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
@@ -234,16 +229,9 @@ private extension LiveStreamVC{
    
 }
 
-//MARK: - BottomSheetDelegate methods
-extension LiveStreamVC : BottomSheetDelegate{
-    
-    func bottomSheetButtonPressed(atIndex: Int) {
-        if(atIndex == 2){
-            presentCustomAlert()
-        }
-    }
-    
-}
+
+
+
 
 
 

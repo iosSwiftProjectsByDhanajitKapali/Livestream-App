@@ -24,6 +24,7 @@
 		0124445F26D664F1001AED01 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124445426D664F0001AED01 /* OpenSans-BoldItalic.ttf */; };
 		0124446126D66832001AED01 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446026D66832001AED01 /* UIFontExtension.swift */; };
 		0124446326D67A6C001AED01 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446226D67A6C001AED01 /* BottomSheet.swift */; };
+		0124446A26D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446926D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -115,6 +116,7 @@
 		0124445426D664F0001AED01 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0124446026D66832001AED01 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		0124446226D67A6C001AED01 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		0124446926D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVCExtensionForBottomSheet.swift; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -273,6 +275,20 @@
 			path = Open_Sans;
 			sourceTree = "<group>";
 		};
+		0124446826D79E67001AED01 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01BEAF3A26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift */,
+				01BEAF3C26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift */,
+				01BEAF3E26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift */,
+				01BEAF4026CF976400F0E968 /* ConstantsForLiveStreamVC.swift */,
+				01BEAF4226CFB0ED00F0E968 /* HeartBubblesAnimation.swift */,
+				01BEAF4426D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift */,
+				0124446926D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		017D814E26B2E9B2003D410B /* UserDefaults Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,12 +318,7 @@
 			children = (
 				012443F926D3CD74001AED01 /* CustomViews */,
 				1B36156524E6549B0046DD8E /* LiveStreamVC.swift */,
-				01BEAF3A26CF8DE100F0E968 /* LiveStreamVCExtensionForAgoraRTC.swift */,
-				01BEAF3C26CF8EA500F0E968 /* LiveStreamVCExtensionForUITableView.swift */,
-				01BEAF3E26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift */,
-				01BEAF4026CF976400F0E968 /* ConstantsForLiveStreamVC.swift */,
-				01BEAF4226CFB0ED00F0E968 /* HeartBubblesAnimation.swift */,
-				01BEAF4426D0DC4B00F0E968 /* LiveStreamVCExtensionForUITextField.swift */,
+				0124446826D79E67001AED01 /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -846,6 +857,7 @@
 			files = (
 				01E0FA5126B1671400993AC7 /* ConstantsForNetworking.swift in Sources */,
 				01E0FA2D26B15FB900993AC7 /* NetworkManager.swift in Sources */,
+				0124446A26D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift in Sources */,
 				017D81A726B41B58003D410B /* StringExtension.swift in Sources */,
 				1B3615BE24E670100046DD8E /* DateUtilities.swift in Sources */,
 				017D824226BA9A66003D410B /* LoginVC.swift in Sources */,

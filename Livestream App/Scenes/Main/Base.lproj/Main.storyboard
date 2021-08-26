@@ -153,7 +153,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83137254900000002" green="0.63921568630000003" blue="0.1960784314" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mgn-F8-yyO" secondAttribute="trailing" id="0rb-cw-TlT"/>
                                     <constraint firstItem="Wmh-lV-cly" firstAttribute="leading" secondItem="Ug4-x4-mSS" secondAttribute="leading" constant="15" id="6NU-fw-ggP"/>

@@ -12,6 +12,7 @@ target 'Livestream App' do
   pod 'IQKeyboardManagerSwift'
   pod 'AgoraRtm_iOS'
   pod 'TransitionButton'
+  pod 'FloatingPanel'
   
   # Pods for Livestream App
 

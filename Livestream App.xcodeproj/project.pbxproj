@@ -23,6 +23,7 @@
 		0124445E26D664F1001AED01 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124445326D664F0001AED01 /* OpenSans-Regular.ttf */; };
 		0124445F26D664F1001AED01 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124445426D664F0001AED01 /* OpenSans-BoldItalic.ttf */; };
 		0124446126D66832001AED01 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446026D66832001AED01 /* UIFontExtension.swift */; };
+		0124446726D78B2D001AED01 /* FloatingPanelSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446626D78B2D001AED01 /* FloatingPanelSheetVC.swift */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -113,6 +114,7 @@
 		0124445326D664F0001AED01 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		0124445426D664F0001AED01 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0124446026D66832001AED01 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		0124446626D78B2D001AED01 /* FloatingPanelSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanelSheetVC.swift; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				1B3615BB24E66FF50046DD8E /* AppUtilities.swift */,
 				1B3615BD24E670100046DD8E /* DateUtilities.swift */,
 				012443FF26D4ADAF001AED01 /* GenerateDPWithNameInitials.swift */,
+				0124446626D78B2D001AED01 /* FloatingPanelSheetVC.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -860,6 +863,7 @@
 				017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */,
 				01E0FAC626B18B6900993AC7 /* ConstantsForDBManager.swift in Sources */,
 				017D81CE26B444F6003D410B /* MySpinner.swift in Sources */,
+				0124446726D78B2D001AED01 /* FloatingPanelSheetVC.swift in Sources */,
 				017D816426B3B148003D410B /* AppFileSystemMetaData.swift in Sources */,
 				017D817126B3B1E6003D410B /* AppDirectories.swift in Sources */,
 				1B36159924E6556C0046DD8E /* UIButtonExtension.swift in Sources */,

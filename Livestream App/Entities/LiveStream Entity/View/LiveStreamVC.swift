@@ -10,6 +10,7 @@
 import UIKit
 import AgoraRtcKit
 import AgoraRtmKit
+import FloatingPanel
 
 class LiveStreamVC: BaseVC {
 
@@ -45,13 +46,14 @@ class LiveStreamVC: BaseVC {
     var agoraRtmUserID : String?
    
 
+    var fpc : FloatingPanelController?
     
     //MARK: - ALL IBActions
     @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
         print("leave button pressed")
         
-        presentCustomAlert()
-        
+        //presentCustomAlert()
+        presentFloatingPanelSheet()
     }
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
@@ -157,6 +159,7 @@ private extension LiveStreamVC{
         
         addCommentTextField.delegate = self
         
+        
         //register the tableViewCell
         liveCommentsTableView.isHidden = true
         liveCommentsTableView.dataSource = self
@@ -198,6 +201,33 @@ private extension LiveStreamVC{
         //kit?.destroyChannel(withId: Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME)
     }
     
+    func presentFloatingPanelSheet(){
+        
+        let floatingPanel = FloatingPanelController()
+        fpc = floatingPanel
+        floatingPanel.delegate = self
+        
+        guard let floatingPanelSheetVC = storyboard?.instantiateViewController(identifier: "FloatingPanelSceneID") as? FloatingPanelSheetVC else {
+            return
+        }
+        floatingPanelSheetVC.delegate = self
+        floatingPanel.backdropView.dismissalTapGestureRecognizer.isEnabled = true
+        floatingPanel.set(contentViewController: floatingPanelSheetVC)
+        floatingPanel.view.layer.cornerRadius = 20
+        floatingPanelSheetVC.view.layer.cornerRadius = 20
+        
+        floatingPanelSheetVC.addNewButton(newButton: FloatingPanelSheetButtonModel(imageName: "no-video-50", buttonTitle: "Voice Only"))
+        floatingPanelSheetVC.addNewButton(newButton: FloatingPanelSheetButtonModel(imageName: "feedback-50", buttonTitle: "Report"))
+        floatingPanelSheetVC.addNewButton(newButton: FloatingPanelSheetButtonModel(imageName: "logout-rounded-left-50", buttonTitle: "Exit LiveStream"))
+        
+        floatingPanel.addPanel(toParent: self)
+        
+    }
+    
+    func dismissFloatingPanelSheet(floatingPanel : FloatingPanelController?){
+        floatingPanel?.removePanelFromParent(animated: true, completion: nil)
+    }
+    
     func presentCustomAlert(){
         //loading the XIB into our view
         let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
@@ -222,6 +252,16 @@ private extension LiveStreamVC{
    
 }
 
-
+extension LiveStreamVC : FloatingPanelSheetVCDelegate , FloatingPanelControllerDelegate{
+    func floatingPanelSheetButtonPressed(atIndex: Int) {
+        if(atIndex == 2){
+            dismissFloatingPanelSheet(floatingPanel: fpc)
+            presentCustomAlert()
+            
+        }
+    }
+    
+    
+}
 
 

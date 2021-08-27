@@ -26,6 +26,8 @@
 		0124446326D67A6C001AED01 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446226D67A6C001AED01 /* BottomSheet.swift */; };
 		0124446A26D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124446926D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift */; };
 		0142BFE226D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142BFE126D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift */; };
+		0142BFE626D8D2520041B18B /* BottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */; };
+		0142BFE726D8D2520041B18B /* BottomSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -119,6 +121,8 @@
 		0124446226D67A6C001AED01 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		0124446926D7A2D2001AED01 /* LiveStreamVCExtensionForBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamVCExtensionForBottomSheet.swift; sourceTree = "<group>"; };
 		0142BFE126D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamVCExtensionForSceneClassDelegate.swift; sourceTree = "<group>"; };
+		0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTableViewCell.swift; sourceTree = "<group>"; };
+		0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetTableViewCell.xib; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -290,6 +294,16 @@
 				0142BFE126D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0142BFE326D8D22D0041B18B /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				0124446226D67A6C001AED01 /* BottomSheet.swift */,
+				0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */,
+				0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		017D814E26B2E9B2003D410B /* UserDefaults Layer */ = {
@@ -539,7 +553,7 @@
 				1B3615BB24E66FF50046DD8E /* AppUtilities.swift */,
 				1B3615BD24E670100046DD8E /* DateUtilities.swift */,
 				012443FF26D4ADAF001AED01 /* GenerateDPWithNameInitials.swift */,
-				0124446226D67A6C001AED01 /* BottomSheet.swift */,
+				0142BFE326D8D22D0041B18B /* BottomSheet */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -716,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0124445B26D664F1001AED01 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				0142BFE726D8D2520041B18B /* BottomSheetTableViewCell.xib in Resources */,
 				0124445A26D664F1001AED01 /* OpenSans-Bold.ttf in Resources */,
 				1B36156E24E6549E0046DD8E /* LaunchScreen.storyboard in Resources */,
 				0124445726D664F1001AED01 /* OpenSans-Italic.ttf in Resources */,
@@ -876,6 +891,7 @@
 				017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */,
 				01E0FA7626B173ED00993AC7 /* NetworkingError.swift in Sources */,
 				01E0FAA126B17F6C00993AC7 /* UserDefaultsHelperProtocol.swift in Sources */,
+				0142BFE626D8D2520041B18B /* BottomSheetTableViewCell.swift in Sources */,
 				017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */,
 				01E0FAC626B18B6900993AC7 /* ConstantsForDBManager.swift in Sources */,
 				017D81CE26B444F6003D410B /* MySpinner.swift in Sources */,

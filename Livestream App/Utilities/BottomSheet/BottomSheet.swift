@@ -37,7 +37,7 @@ class BottomSheet: UIViewController {
     
     private lazy var mytableView : UITableView = {
         let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
     
@@ -113,6 +113,7 @@ extension BottomSheet{
         
         mytableView.delegate = self
         mytableView.dataSource = self
+        mytableView.register(UINib(nibName: "BottomSheetTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         // tap gesture on dimmed view to dismiss
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleCloseAction))
@@ -299,14 +300,23 @@ extension BottomSheet : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mytableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = bottomSheetButtons[indexPath.row].buttonTitle
         
-        cell.imageView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        cell.imageView?.image = UIImage(named: bottomSheetButtons[indexPath.row].imageName)
+        let cell = mytableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BottomSheetTableViewCell
+        
+        cell.bottomSheetTabelViewCellTextLabel.text = bottomSheetButtons[indexPath.row].buttonTitle
+        //cell.textLabel?.text =
+        cell.bottomSheetTabelViewCellimageView.image = UIImage(named: bottomSheetButtons[indexPath.row].imageName)
+        //cell.imageView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        //let myImageView = UIImageView(image: )
+        
+        
+        //cell.imageView?.image
+        
         
         return cell
     }
+    
+    
     
 }
 
@@ -326,3 +336,4 @@ struct BottomSheetButton{
     let imageName : String
     let buttonTitle : String
 }
+

@@ -129,6 +129,11 @@ extension LiveStreamVC : AgoraRtmChannelDelegate{
     }
     func channel(_ channel: AgoraRtmChannel, memberJoined member: AgoraRtmMember) {
         print("\(member.userId) joined")
+        self.newMemberJoinedBackgroundView.isHidden = false
+        self.newMemberJoinedUserNameTextLabel.text = String(member.userId)
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.newMemberJoinedBackgroundView.isHidden = true
+        }
     }
     
     func channel(_ channel: AgoraRtmChannel, memberLeft member: AgoraRtmMember) {
@@ -136,8 +141,7 @@ extension LiveStreamVC : AgoraRtmChannelDelegate{
     }
     
     func channel(_ channel: AgoraRtmChannel, memberCount count: Int32) {
-        
+        self.activePeopleInLivestreamTextLabel.text = String(count)
     }
-    
     
 }

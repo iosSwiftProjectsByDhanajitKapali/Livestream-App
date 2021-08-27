@@ -109,11 +109,6 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         
         HostID = uid
         
-        self.newMemberJoinedBackgroundView.isHidden = false
-        self.newMemberJoinedUserNameTextLabel.text = String(uid)
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            self.newMemberJoinedBackgroundView.isHidden = true
-        }
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {

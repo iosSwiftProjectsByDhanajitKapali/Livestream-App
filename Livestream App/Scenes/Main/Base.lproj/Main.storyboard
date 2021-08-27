@@ -96,7 +96,7 @@
                                             <constraint firstItem="l3I-Kx-3yC" firstAttribute="leading" secondItem="K2R-WA-VuO" secondAttribute="leading" constant="5" id="od9-jM-lTg"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv8-AZ-kPm">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv8-AZ-kPm">
                                         <rect key="frame" x="344" y="10" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="IhC-1J-1mO"/>
@@ -113,14 +113,17 @@
                                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ww-GQ-flg">
                                                 <rect key="frame" x="0.0" y="6.5" width="270" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Say hi" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-gW-z4I">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Say hi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-gW-z4I">
                                                         <rect key="frame" x="50" y="5" width="215" height="40"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="4UW-2s-1S2"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="threeDotIcon" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-Ju-p0m">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="threeDotIcon" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-Ju-p0m">
                                                         <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="J4U-fD-RyW"/>
@@ -128,7 +131,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="CYv-gW-z4I" secondAttribute="bottom" constant="5" id="3MP-T7-9k6"/>
                                                     <constraint firstItem="CYv-gW-z4I" firstAttribute="top" secondItem="0Ww-GQ-flg" secondAttribute="top" constant="5" id="Fcs-5G-COw"/>
@@ -139,7 +142,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="CYv-gW-z4I" secondAttribute="trailing" constant="5" id="vqv-6S-dYi"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fax-5m-INn">
+                                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fax-5m-INn">
                                                 <rect key="frame" x="277" y="9" width="45" height="45"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -222,7 +225,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="nfs-nM-4qQ" secondAttribute="bottom" constant="10" id="Qgt-BH-a8f"/>
                                             <constraint firstAttribute="trailing" secondItem="nfs-nM-4qQ" secondAttribute="trailing" constant="10" id="VxD-pJ-uVa"/>
@@ -231,7 +234,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83137254900000002" green="0.63921568630000003" blue="0.1960784314" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mgn-F8-yyO" secondAttribute="trailing" id="0rb-cw-TlT"/>
                                     <constraint firstItem="Wmh-lV-cly" firstAttribute="leading" secondItem="Ug4-x4-mSS" secondAttribute="leading" constant="15" id="6NU-fw-ggP"/>
@@ -266,6 +269,7 @@
                         <outlet property="addCommentTextField" destination="CYv-gW-z4I" id="gO9-tN-Wlt"/>
                         <outlet property="goToLatestCommentButton" destination="yGc-Fo-YDW" id="9t0-o1-xGy"/>
                         <outlet property="heartBubbleBackgroundView" destination="mgn-F8-yyO" id="Bts-J2-YFw"/>
+                        <outlet property="heartBubbleTotalCountTextLabel" destination="G9A-05-U7v" id="VoM-W1-tvJ"/>
                         <outlet property="hostProfileImageView" destination="l3I-Kx-3yC" id="NNO-57-aNP"/>
                         <outlet property="hostUserNameTextLabel" destination="f3O-BE-SJx" id="tLA-Wy-lNp"/>
                         <outlet property="isHostLiveTextLabel" destination="okM-Ft-KxU" id="4fW-Fz-Pce"/>
@@ -275,7 +279,6 @@
                         <outlet property="newMemberJoinedUserNameTextLabel" destination="GbA-Je-bh9" id="IPQ-8c-lUv"/>
                         <outlet property="remoteView" destination="Ug4-x4-mSS" id="wB1-gx-IdA"/>
                         <outlet property="sendCommentButton" destination="fax-5m-INn" id="IO8-hS-xKm"/>
-                        <outlet property="totalCountTextLabel" destination="G9A-05-U7v" id="Sgp-0J-cEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

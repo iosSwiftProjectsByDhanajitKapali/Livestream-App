@@ -15,7 +15,7 @@ class LiveStreamVC: BaseVC {
 
     //MARK: - Private Variables
     private var presenter : Presenter!
-    
+    var heartBubbleTotalCount : Int = 0
     
     //MARK: - Public Variables
     var tableViewData = [LiveCommentModel]()
@@ -46,7 +46,7 @@ class LiveStreamVC: BaseVC {
     @IBOutlet var sendCommentButton: UIButton!
     @IBOutlet var liveCommentsTableView: UITableView!
     @IBOutlet var heartBubbleBackgroundView: UIView!
-    @IBOutlet var totalCountTextLabel: UILabel!
+    @IBOutlet var heartBubbleTotalCountTextLabel: UILabel!
     @IBOutlet var goToLatestCommentButton: UIButton!
     @IBOutlet var remoteView: UIView!
     @IBOutlet var leaveLivestreamButton: UIButton!
@@ -75,6 +75,8 @@ class LiveStreamVC: BaseVC {
     }
     
     @IBAction func heartButtonPressed(_ sender: UIButton) {
+        heartBubbleTotalCount+=1
+        heartBubbleTotalCountTextLabel.text = String(heartBubbleTotalCount)
         
         //Start the Animation
         (0...4).forEach { _ in
@@ -196,6 +198,7 @@ private extension LiveStreamVC{
         liveCommentsTableView.register(UINib(nibName: "LiveCommentsTableViewCell", bundle: nil), forCellReuseIdentifier: "LiveCommentsTableViewCellID")
         liveCommentsTableView.transform = CGAffineTransform (scaleX: -1,y: -1);
         
+        heartBubbleTotalCountTextLabel.text = String(heartBubbleTotalCount)
         
         //setup the AGORA RTC
         // This function initializes the local and remote video views
@@ -214,7 +217,7 @@ private extension LiveStreamVC{
         //join the Agora RTC
         joinAgoraRtcChannel()
         //login and join the Agora RTM
-        loginToAgoraRTMServer(withUserID: "userB")
+        loginToAgoraRTMServer(withUserID: "userA")
     }
     
     func stopliveStream() {

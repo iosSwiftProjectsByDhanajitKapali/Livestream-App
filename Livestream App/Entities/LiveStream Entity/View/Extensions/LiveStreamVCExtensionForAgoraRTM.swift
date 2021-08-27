@@ -119,6 +119,7 @@ extension LiveStreamVC: AgoraRtmDelegate{
     func rtmKit(_ kit: AgoraRtmKit, messageReceived message: AgoraRtmMessage, fromPeer peerId: String) {
         appendMessage(user: peerId, content: message.text)
     }
+    
 }
 
 //MARK: - AgoraRtmChannelDelegate functions
@@ -137,4 +138,6 @@ extension LiveStreamVC : AgoraRtmChannelDelegate{
     func channel(_ channel: AgoraRtmChannel, memberCount count: Int32) {
         
     }
+    
+    
 }

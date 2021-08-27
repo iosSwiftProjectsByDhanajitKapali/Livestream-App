@@ -108,14 +108,19 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         self.isHostLiveTextLabel.isHidden = false
         
         HostID = uid
-        print(uid)
-        getUserInfo(forUid: uid)
+        
+        self.newMemberJoinedBackgroundView.isHidden = false
+        self.newMemberJoinedUserNameTextLabel.text = String(uid)
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.newMemberJoinedBackgroundView.isHidden = true
+        }
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
         self.isHostLiveTextLabel.isHidden = true
     }
     
+    /* Not Used Now*/
     func rtcEngine(_ engine: AgoraRtcEngineKit, reportRtcStats stats: AgoraChannelStats) {
         let (h,m,s) = secondsToHoursMinutesSeconds(seconds: stats.duration)
         var timeInString = ""
@@ -124,9 +129,9 @@ extension LiveStreamVC : AgoraRtcEngineDelegate{
         }else{
             timeInString = "\(m):\(s)"
         }
-        self.livestreamUptimeTextLabel.text = timeInString
+        //self.livestreamUptimeTextLabel.text = timeInString
         
-        self.activePeopleInLivestreamTextLabel.text = String(stats.userCount)
+        //self.activePeopleInLivestreamTextLabel.text = String(stats.userCount)
     }
     
     /* Not Working*/

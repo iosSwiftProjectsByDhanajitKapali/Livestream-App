@@ -39,10 +39,14 @@ class LiveStreamVC: BaseVC {
     @IBOutlet var livestreamUptimeTextLabel: UILabel!
     @IBOutlet var activePeopleInLivestreamTextLabel: UILabel!
     
+    @IBOutlet var newMemberJoinedBackgroundView: UIView!
+    @IBOutlet var newMemberJoinedUserNameTextLabel: UILabel!
+    @IBOutlet var addCommentBackgroundView: UIView!
     @IBOutlet var addCommentTextField: UITextField!
     @IBOutlet var sendCommentButton: UIButton!
     @IBOutlet var liveCommentsTableView: UITableView!
     @IBOutlet var heartBubbleBackgroundView: UIView!
+    @IBOutlet var totalCountTextLabel: UILabel!
     @IBOutlet var goToLatestCommentButton: UIButton!
     @IBOutlet var remoteView: UIView!
     @IBOutlet var leaveLivestreamButton: UIButton!
@@ -53,6 +57,10 @@ class LiveStreamVC: BaseVC {
         
         //presentCustomAlert()
         presentBottomSheet()
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        print("Shared button Pressed")
     }
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
@@ -153,10 +161,16 @@ private extension LiveStreamVC{
     func addDesignToUI(){
         navigationController?.navigationBar.barTintColor = UIColor.black
         remoteView.layer.cornerRadius = 10
+        
+        self.newMemberJoinedBackgroundView.layer.cornerRadius = 15
+        self.newMemberJoinedBackgroundView.layer.borderWidth = 3
+        self.newMemberJoinedBackgroundView.layer.borderColor = UIColor.white.cgColor
+        self.newMemberJoinedBackgroundView.isHidden = true
+
         self.addCommentTextField.layer.cornerRadius = 20
-        self.addCommentTextField.layer.borderWidth = 2.0
-        self.addCommentTextField.layer.borderColor = UIColor.gray.cgColor
-        addCommentTextField.setLeftPaddingPoints(10)
+        self.addCommentBackgroundView.layer.cornerRadius = 20
+        
+        addCommentTextField.setLeftPaddingPoints(5)
         
         hostProfileImageView.makeImageCircular()
         
@@ -200,7 +214,7 @@ private extension LiveStreamVC{
         //join the Agora RTC
         joinAgoraRtcChannel()
         //login and join the Agora RTM
-        loginToAgoraRTMServer(withUserID: "userA")
+        loginToAgoraRTMServer(withUserID: "userB")
     }
     
     func stopliveStream() {

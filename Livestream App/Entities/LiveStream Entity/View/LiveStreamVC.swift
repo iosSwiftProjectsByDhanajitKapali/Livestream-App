@@ -65,8 +65,10 @@ class LiveStreamVC: BaseVC {
     
     @IBAction func sendCommentButtonPressed(_ sender: UIButton) {
         if let message = addCommentTextField.text, !message.isEmpty{
-            sendGroupMessage(withMessageText: message)
-            addCommentTextField.text = ""
+            if validateComment(commentText: message) {
+                sendGroupMessage(withMessageText: message)
+                addCommentTextField.text = ""
+            }
         }
     }
     
@@ -146,13 +148,21 @@ extension LiveStreamVC : CustomAlertDelegate{
 
 //MARK: - Public Methods
 extension LiveStreamVC{
-    func presentCustomAlert(){
+    func presentCustomAlert(withTitle: String, message: String, buttonOneTitle: String, buttonTwoTitle:String){
         //loading the XIB into our view
-        let alertData = CustomAlertModel(alertTitle: "Are You Sure ?", alertMessage: "You want to leave the livestream", alertButtonOneTitle: "Yes", alertButtonTwoTitle: "No")
+        let alertData = CustomAlertModel(alertTitle: withTitle, alertMessage: message, alertButtonOneTitle: buttonOneTitle, alertButtonTwoTitle: buttonTwoTitle)
         let customAlertView = CustomAlert(frame: self.view.bounds, data: alertData)
         customAlertView.delegate = self
         customAlertView.tag = 1
         self.view.addSubview(customAlertView)
+    }
+    
+    func validateComment(commentText : String) -> Bool{
+        if !commentText.isEmailFormatted() && !commentText.isValidMobileNo(){
+            return true
+        }else{
+            return false
+        }
     }
 }
 

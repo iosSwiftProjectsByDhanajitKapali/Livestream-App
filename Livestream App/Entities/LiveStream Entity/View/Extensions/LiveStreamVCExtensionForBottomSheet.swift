@@ -70,7 +70,7 @@ extension LiveStreamVC : BottomSheetDelegate{
             
             
         } else if(atIndex == 3){
-            presentCustomAlert()
+            presentCustomAlert(withTitle: "Are you sure ?", message: "You want to leave the livestream", buttonOneTitle: "Yes", buttonTwoTitle: "No")
         }
         
     }

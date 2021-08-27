@@ -25,6 +25,13 @@ extension String {
         return addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? Constant.TextMessage.EMPTY_FILE_NAME
     }
     
+    func isValidMobileNo() -> Bool {
+        let PHONE_REGEX = "(0|91)?[7-9][0-9]{9}"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result = phoneTest.evaluate(with: self)
+        return result
+    }
+    
     //Regex fulfill RFC 5322 Internet Message format
     func isEmailFormatted() -> Bool {
         let emailRegex = Constant.RegexExplression.EMAIL_REGEX
@@ -32,3 +39,21 @@ extension String {
         return predicate.evaluate(with: self)
     }
 }
+
+extension Optional where Wrapped == String{
+    
+    func isEmptyOrWhitespace() -> Bool {
+        // Check nil
+        let theString = self
+        guard let this = theString else { return true }
+        
+        // Check empty string
+        if this.isEmpty {
+            return true
+        }
+        // Trim and check empty string
+        let isEmpty = this.trimmingCharacters(in: .whitespaces) == ""
+        return isEmpty
+    }
+}
+    

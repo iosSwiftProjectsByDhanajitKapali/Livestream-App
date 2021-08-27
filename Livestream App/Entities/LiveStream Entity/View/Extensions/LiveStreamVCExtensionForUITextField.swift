@@ -17,10 +17,21 @@ extension LiveStreamVC : UITextFieldDelegate {
     //defining the task to be done when the return(Go) key is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)    //ending the editing ,collapse keyboard
-        if let message = addCommentTextField.text, !message.isEmpty{
-            sendGroupMessage(withMessageText: message)
+        
+        let message = addCommentTextField.text
+        if !message.isEmptyOrWhitespace(){
+            if let message = message{
+                if validateComment(commentText: message){
+                    sendGroupMessage(withMessageText: message)
+                    addCommentTextField.text = ""
+                }else{
+                    displayAlert(alertMessage: "Not allowed to send Phone no. or Email-ID")
+                    addCommentTextField.text = ""
+                }
+            }
+        }else{
             addCommentTextField.text = ""
-        }
+        }        
         return true
     }
     

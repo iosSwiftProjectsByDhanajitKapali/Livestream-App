@@ -10,7 +10,7 @@
 import UIKit
 import AgoraRtcKit
 import AgoraRtmKit
-import Alamofire
+
 
 class LiveStreamVC: BaseVC {
 
@@ -251,7 +251,7 @@ private extension LiveStreamVC{
     }
     
     func getTokens(){
-        let headers : HTTPHeaders = [
+        let headers = [
                 "Authorization": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJVc2VyVHlwZSI6IkFzdHJvbG9nZXIiLCJFbnRpdHlJZCI6IjEwOTYiLCJTb3VyY2VVc2VyVHlwZSI6IiIsIlNvdXJjZUVudGl0eUlkIjoiIiwibmJmIjoxNjI5OTgzMTg0LCJleHAiOjE2MzA1ODc5ODR9.",
                 "Accept-Language": "US"
             ]

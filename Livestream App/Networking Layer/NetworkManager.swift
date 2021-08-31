@@ -15,8 +15,12 @@ struct NetworkManager {
             return NetworkReachabilityManager()?.isReachable ?? false
     }
     
-    func getAPICall<T: Decodable>(url: String, parameters: [String:Any], headers: HTTPHeaders, responseClass: T.Type , completion:@escaping (Result<T, NetworkingError>) -> Void) {
-        AF.request(url, method: .get, parameters: parameters, headers: headers).responseJSON { (response) in
+    func getAPICall<T: Decodable>(url: String, parameters: [String:Any], headers: [String:String], responseClass: T.Type , completion:@escaping (Result<T, NetworkingError>) -> Void) {
+        
+        //Create the Header
+        let theHeaders = HTTPHeaders(headers)
+            
+        AF.request(url, method: .get, parameters: parameters, headers: theHeaders).responseJSON { (response) in
             guard let _ = response.response?.statusCode else {
                 completion(.failure(.noResponse))
                 return

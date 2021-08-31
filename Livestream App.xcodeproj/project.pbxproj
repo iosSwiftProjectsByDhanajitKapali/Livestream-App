@@ -29,6 +29,7 @@
 		0142BFE626D8D2520041B18B /* BottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */; };
 		0142BFE726D8D2520041B18B /* BottomSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */; };
 		0142C01226DE44C70041B18B /* MyTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C01126DE44C70041B18B /* MyTokenModel.swift */; };
+		0142C01426DE5A8F0041B18B /* AppKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C01326DE5A8F0041B18B /* AppKeys.swift */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -125,6 +126,7 @@
 		0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTableViewCell.swift; sourceTree = "<group>"; };
 		0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetTableViewCell.xib; sourceTree = "<group>"; };
 		0142C01126DE44C70041B18B /* MyTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTokenModel.swift; sourceTree = "<group>"; };
+		0142C01326DE5A8F0041B18B /* AppKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeys.swift; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				1B36159424E655170046DD8E /* PLists */,
 				1B36159124E655170046DD8E /* Assets */,
 				01E0FA7A26B1746D00993AC7 /* Constants.swift */,
+				0142C01326DE5A8F0041B18B /* AppKeys.swift */,
 			);
 			path = "Livestream App";
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				01BEAF3326CE6A4400F0E968 /* UITextFieldExtension.swift in Sources */,
 				0124440026D4ADAF001AED01 /* GenerateDPWithNameInitials.swift in Sources */,
 				017D825426BA9C62003D410B /* LoginVC_Presenter.swift in Sources */,
+				0142C01426DE5A8F0041B18B /* AppKeys.swift in Sources */,
 				1B3615BC24E66FF50046DD8E /* AppUtilities.swift in Sources */,
 				1B36159D24E655910046DD8E /* UIColorExtension.swift in Sources */,
 				01E0FA9826B1777A00993AC7 /* HttpResponseCodeChecker.swift in Sources */,

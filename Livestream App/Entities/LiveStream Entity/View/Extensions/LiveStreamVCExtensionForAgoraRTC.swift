@@ -15,7 +15,7 @@ private var HostID : UInt? = nil
 extension LiveStreamVC{
     
     func initializeAgoraEngine() {
-        agoraRtcKit = AgoraRtcEngineKit.sharedEngine(withAppId: Constant.AgoraKeys.AGORA_RTC_APP_ID, delegate: self)
+        agoraRtcKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppKeys.AgoraKeys.AGORA_RTC_APP_ID, delegate: self)
     }
     
     func setChannelProfile(){
@@ -70,7 +70,7 @@ extension LiveStreamVC{
         print("Joining Channel....")
         // The uid of each user in the channel must be unique.
         //AgoraRtcChannel().setRtcChannelDelegate(self)
-        agoraRtcKit?.joinChannel(byToken: Constant.AgoraKeys.AGORA_RTC_TEMP_TOKEN, channelId: Constant.AgoraKeys.AGORA_RTC_CHANNEL_NAME, info: nil, uid: 0, joinSuccess: { (channel, uid, elapsed) in
+        agoraRtcKit?.joinChannel(byToken: AppKeys.AgoraKeys.AGORA_RTC_TEMP_TOKEN, channelId: AppKeys.AgoraKeys.AGORA_RTC_CHANNEL_NAME, info: nil, uid: 0, joinSuccess: { (channel, uid, elapsed) in
             
             print("Successfully Joined the Channel")
         })

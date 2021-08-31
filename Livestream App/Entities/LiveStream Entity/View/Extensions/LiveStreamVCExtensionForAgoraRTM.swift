@@ -54,7 +54,7 @@ extension LiveStreamVC{
     
     ///create RTM cahnnel
     func joinAgoraRtmChannel(withChannelID : String){
-        guard let channel = kit?.createChannel(withId: Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME, delegate: self)
+        guard let channel = kit?.createChannel(withId: AppKeys.AgoraKeys.AGORA_RTM_CHANNEL_NAME, delegate: self)
         else{
             print("error creating the channel")
             return

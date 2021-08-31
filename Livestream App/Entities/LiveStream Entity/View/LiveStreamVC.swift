@@ -222,7 +222,7 @@ private extension LiveStreamVC{
         //setupLocalVideo()
         
         //setup the agoraRTM
-        kit = AgoraRtmKit(appId: Constant.AgoraKeys.AGORA_RTM_APP_ID, delegate: self)
+        kit = AgoraRtmKit(appId: AppKeys.AgoraKeys.AGORA_RTM_APP_ID, delegate: self)
     }
     
     func startLiveStream(){
@@ -259,10 +259,10 @@ private extension LiveStreamVC{
         NetworkManager().getAPICall(url: "https://chdemo.astroyogi.com/api/AstrologerLiveStream/GetAgoraAccessToken", parameters: [:], headers: headers, responseClass: MyTokenModel.self) { [self] result  in
             switch result{
             case .success(let theData):
-                Constant.AgoraKeys.AGORA_RTC_TEMP_TOKEN = theData.data.voiceAccessToken
-                Constant.AgoraKeys.AGORA_RTM_TEMP_TOKEN = theData.data.accessToken
-                Constant.AgoraKeys.AGORA_RTC_CHANNEL_NAME = theData.data.channelName
-                Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME = theData.data.channelName
+                AppKeys.AgoraKeys.AGORA_RTC_TEMP_TOKEN = theData.data.voiceAccessToken
+                AppKeys.AgoraKeys.AGORA_RTM_TEMP_TOKEN = theData.data.accessToken
+                AppKeys.AgoraKeys.AGORA_RTC_CHANNEL_NAME = theData.data.channelName
+                AppKeys.AgoraKeys.AGORA_RTM_CHANNEL_NAME = theData.data.channelName
                 
                 //start the liveStream
                 startLiveStream()

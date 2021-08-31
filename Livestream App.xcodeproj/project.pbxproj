@@ -28,6 +28,7 @@
 		0142BFE226D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142BFE126D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift */; };
 		0142BFE626D8D2520041B18B /* BottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */; };
 		0142BFE726D8D2520041B18B /* BottomSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */; };
+		0142C01226DE44C70041B18B /* MyTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C01126DE44C70041B18B /* MyTokenModel.swift */; };
 		017D813226B2781E003D410B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813126B2781E003D410B /* UIImageViewExtension.swift */; };
 		017D813726B2C03B003D410B /* AppDirectoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D813626B2C03B003D410B /* AppDirectoryNames.swift */; };
 		017D815526B3B033003D410B /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D815426B3B033003D410B /* FileManagerHelper.swift */; };
@@ -123,6 +124,7 @@
 		0142BFE126D7C8D20041B18B /* LivestreamVCExtensionForSceneClassDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamVCExtensionForSceneClassDelegate.swift; sourceTree = "<group>"; };
 		0142BFE426D8D2520041B18B /* BottomSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTableViewCell.swift; sourceTree = "<group>"; };
 		0142BFE526D8D2520041B18B /* BottomSheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetTableViewCell.xib; sourceTree = "<group>"; };
+		0142C01126DE44C70041B18B /* MyTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTokenModel.swift; sourceTree = "<group>"; };
 		017D813126B2781E003D410B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		017D813626B2C03B003D410B /* AppDirectoryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectoryNames.swift; sourceTree = "<group>"; };
 		017D815426B3B033003D410B /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		017D823326BA984A003D410B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0142C01126DE44C70041B18B /* MyTokenModel.swift */,
 				01E0FA6F26B1706500993AC7 /* Model.swift */,
 			);
 			path = Model;
@@ -900,6 +903,7 @@
 				1B36159924E6556C0046DD8E /* UIButtonExtension.swift in Sources */,
 				1B36156224E6549B0046DD8E /* AppDelegate.swift in Sources */,
 				01BEAF3F26CF96DB00F0E968 /* LiveStreamVCExtensionForAgoraRTM.swift in Sources */,
+				0142C01226DE44C70041B18B /* MyTokenModel.swift in Sources */,
 				017D824F26BA9C4B003D410B /* SignUpVC_Presenter.swift in Sources */,
 				01BEAF3726CE6C4300F0E968 /* LiveCommentsTableViewCell.swift in Sources */,
 				01E0FAB626B185A700993AC7 /* DataBaseManager.swift in Sources */,

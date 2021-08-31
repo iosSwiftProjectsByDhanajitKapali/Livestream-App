@@ -10,6 +10,7 @@
 import UIKit
 import AgoraRtcKit
 import AgoraRtmKit
+import Alamofire
 
 class LiveStreamVC: BaseVC {
 
@@ -96,19 +97,20 @@ extension LiveStreamVC{
     override func viewDidLoad() {
         super.viewDidLoad()
         addDesignToUI()
+        
         initialSetup()
         
         //Setup the Presenter
         presenter = Presenter(withDelegate: self)
         
-        //start the liveStream
-        startLiveStream()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        getTokens()
     }
     override func viewDidDisappear(_ animated: Bool) {
         disposeAgora()
@@ -246,6 +248,29 @@ private extension LiveStreamVC{
     func scrollToFirstRow() {
         let indexPath = NSIndexPath(row: 0, section: 0)
         self.liveCommentsTableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+    }
+    
+    func getTokens(){
+        let headers : HTTPHeaders = [
+                "Authorization": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJVc2VyVHlwZSI6IkFzdHJvbG9nZXIiLCJFbnRpdHlJZCI6IjEwOTYiLCJTb3VyY2VVc2VyVHlwZSI6IiIsIlNvdXJjZUVudGl0eUlkIjoiIiwibmJmIjoxNjI5OTgzMTg0LCJleHAiOjE2MzA1ODc5ODR9.",
+                "Accept-Language": "US"
+            ]
+        
+        NetworkManager().getAPICall(url: "https://chdemo.astroyogi.com/api/AstrologerLiveStream/GetAgoraAccessToken", parameters: [:], headers: headers, responseClass: MyTokenModel.self) { [self] result  in
+            switch result{
+            case .success(let theData):
+                Constant.AgoraKeys.AGORA_RTC_TEMP_TOKEN = theData.data.voiceAccessToken
+                Constant.AgoraKeys.AGORA_RTM_TEMP_TOKEN = theData.data.accessToken
+                Constant.AgoraKeys.AGORA_RTC_CHANNEL_NAME = theData.data.channelName
+                Constant.AgoraKeys.AGORA_RTM_CHANNEL_NAME = theData.data.channelName
+                
+                //start the liveStream
+                startLiveStream()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     /*

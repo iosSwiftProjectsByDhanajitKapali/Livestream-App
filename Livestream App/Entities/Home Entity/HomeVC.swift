@@ -8,6 +8,7 @@
 
 import UIKit
 import TransitionButton
+import Alamofire
 
 class HomeVC: UIViewController {
 
@@ -35,8 +36,6 @@ class HomeVC: UIViewController {
         })
     }
     
-    
-
 }
 
 //MARK: - Lifecyle methods of HomeVC

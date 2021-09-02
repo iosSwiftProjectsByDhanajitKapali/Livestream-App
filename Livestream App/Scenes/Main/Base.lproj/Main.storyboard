@@ -28,7 +28,7 @@
                                 <rect key="frame" x="10" y="54" width="394" height="808"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmh-lV-cly">
-                                        <rect key="frame" x="15" y="480" width="329" height="250"/>
+                                        <rect key="frame" x="15" y="486" width="329" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="fFR-Fa-TKv"/>
@@ -108,7 +108,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qna-Jb-kow">
-                                        <rect key="frame" x="5" y="740" width="389" height="58"/>
+                                        <rect key="frame" x="5" y="746" width="389" height="58"/>
                                         <subviews>
                                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ww-GQ-flg">
                                                 <rect key="frame" x="0.0" y="6.5" width="294" height="45"/>
@@ -141,6 +141,14 @@
                                                     <constraint firstAttribute="trailing" secondItem="CYv-gW-z4I" secondAttribute="trailing" constant="5" id="wTP-oL-5wL"/>
                                                 </constraints>
                                             </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YN-VN-eGL" userLabel="ShareButton">
+                                                <rect key="frame" x="296.5" y="9" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Me7-WM-vfT"/>
+                                                    <constraint firstAttribute="height" constant="40" id="QlP-O9-Vap"/>
+                                                </constraints>
+                                                <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                                            </button>
                                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fax-5m-INn">
                                                 <rect key="frame" x="299" y="9" width="40" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +189,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgn-F8-yyO">
-                                        <rect key="frame" x="234" y="470" width="160" height="270"/>
+                                        <rect key="frame" x="234" y="476" width="160" height="270"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGc-Fo-YDW">
                                                 <rect key="frame" x="62.5" y="225" width="35" height="35"/>
@@ -208,7 +216,7 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-Mo-N8H">
-                                        <rect key="frame" x="15" y="426.5" width="238.5" height="43.5"/>
+                                        <rect key="frame" x="15" y="432.5" width="238.5" height="43.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nfs-nM-4qQ">
                                                 <rect key="frame" x="10" y="10" width="218.5" height="23.5"/>
@@ -243,7 +251,7 @@
                                     <constraint firstItem="Wmh-lV-cly" firstAttribute="leading" secondItem="Ug4-x4-mSS" secondAttribute="leading" constant="15" id="6NU-fw-ggP"/>
                                     <constraint firstItem="K2R-WA-VuO" firstAttribute="leading" secondItem="Ug4-x4-mSS" secondAttribute="leading" constant="10" id="9hg-j7-GzR"/>
                                     <constraint firstItem="Qna-Jb-kow" firstAttribute="leading" secondItem="Ug4-x4-mSS" secondAttribute="leading" constant="5" id="Dqf-Ty-Tav"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qna-Jb-kow" secondAttribute="bottom" constant="10" id="ExV-Z8-BGQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qna-Jb-kow" secondAttribute="bottom" constant="4" id="ExV-Z8-BGQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Qna-Jb-kow" secondAttribute="trailing" id="G6v-H1-ssw"/>
                                     <constraint firstItem="tv8-AZ-kPm" firstAttribute="top" secondItem="Ug4-x4-mSS" secondAttribute="top" constant="10" id="Qdb-PX-Tlq"/>
                                     <constraint firstItem="Qna-Jb-kow" firstAttribute="top" secondItem="Wmh-lV-cly" secondAttribute="bottom" constant="10" id="b2S-SI-RFS"/>
@@ -277,11 +285,13 @@
                         <outlet property="hostUserNameTextLabel" destination="f3O-BE-SJx" id="tLA-Wy-lNp"/>
                         <outlet property="isHostLiveTextLabel" destination="okM-Ft-KxU" id="4fW-Fz-Pce"/>
                         <outlet property="leaveLivestreamButton" destination="tv8-AZ-kPm" id="ahB-oH-J3h"/>
+                        <outlet property="likeButtonStackView" destination="pwJ-Kp-WdH" id="RYP-ff-iWX"/>
                         <outlet property="liveCommentsTableView" destination="Wmh-lV-cly" id="aam-g0-LWJ"/>
                         <outlet property="newMemberJoinedBackgroundView" destination="FbC-Mo-N8H" id="W4F-Sm-KmQ"/>
                         <outlet property="newMemberJoinedUserNameTextLabel" destination="GbA-Je-bh9" id="IPQ-8c-lUv"/>
                         <outlet property="remoteView" destination="Ug4-x4-mSS" id="wB1-gx-IdA"/>
                         <outlet property="sendCommentButton" destination="fax-5m-INn" id="IO8-hS-xKm"/>
+                        <outlet property="shareButton" destination="3YN-VN-eGL" id="ds4-Qc-tta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -382,6 +392,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="double-down-arrow-icon" width="256" height="256"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="heart-50" width="50" height="50"/>

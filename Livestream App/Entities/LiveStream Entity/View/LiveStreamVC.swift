@@ -51,8 +51,8 @@ class LiveStreamVC: BaseVC {
     @IBOutlet var goToLatestCommentButton: UIButton!
     @IBOutlet var remoteView: UIView!
     @IBOutlet var leaveLivestreamButton: UIButton!
-    
-    
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var likeButtonStackView: UIStackView!
     //MARK: - IBActions
     @IBAction func leaveLivestreamButtonPressed(_ sender: UIButton) {
         
@@ -282,11 +282,3 @@ private extension LiveStreamVC{
     }
    
 }
-
-
-
-
-
-
-
-

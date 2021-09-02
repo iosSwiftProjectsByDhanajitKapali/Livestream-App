@@ -10,14 +10,26 @@ import UIKit
 
 extension LiveStreamVC : UITextFieldDelegate {
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        likeButtonStackView.isHidden = true
+        sendCommentButton.isHidden = true
+        shareButton.isHidden = false
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason){
+        likeButtonStackView.isHidden = false
+        sendCommentButton.isHidden = false
+        shareButton.isHidden = true
     }
     
     //defining the task to be done when the return(Go) key is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)    //ending the editing ,collapse keyboard
-        
         let message = addCommentTextField.text
         if !message.isEmptyOrWhitespace(){
             if let message = message{

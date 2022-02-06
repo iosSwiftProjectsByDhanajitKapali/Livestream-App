@@ -5,6 +5,8 @@
 
 </div>
 
+One can create a Livestream(using website) then users can join that livestream using this app. Also users can see live comments from other live users also.
+
 ## Screenshots
 <table>
         <tr>
